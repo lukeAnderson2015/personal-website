@@ -9,8 +9,8 @@ export const locations = [
         ],
         journalEntries: [
             {
-                date: '',
-                text: ''
+                date: '1/1/11',
+                text: 'test'
             }
         ],
         summary: "We spent one month in Ecuador. We saw large cities like Quito, and Cuenca, and explored tiny towns: Banos, Montanita and Mindo."
