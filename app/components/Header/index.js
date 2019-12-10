@@ -15,7 +15,7 @@ function Header() {
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
           <HeaderLink to="/" style={{display: 'flex', alignItems: 'center'}}>
             <p>
-              Home
+              Writings
             </p>  
           </HeaderLink>
           <HeaderLink to="/travels" style={{display: 'flex', alignItems: 'center'}}>
