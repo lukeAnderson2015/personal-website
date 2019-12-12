@@ -28,7 +28,7 @@ function Header() {
               About
             </p>
           </HeaderLink>
-          <a href="/files/Lukas_Anderson_resume.pdf" download style={{marginRight: '15px'}}>
+          <a href="/files/Resume_Lukas_Anderson.pdf" download style={{marginRight: '15px'}}>
             <Img src={downloadIcon} alt="icon-unavailable"/>
           </a>
         </div>
