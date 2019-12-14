@@ -14,10 +14,14 @@ export default defineMessages({
   },
   introMessage: {
     id: `${scope}.intro.message`,
-    defaultMessage: "I am adventurous, inclusive, active, passionate and honest. When I'm not working on software, I'm exercising, socializing or exploring the outdoors. I involve music in almost everything I do; I play drums and try to see live concerts as much as possible.",
+    defaultMessage: "I am adventurous, active, passionate and honest. When I'm not working on software, I'm exercising, socializing or exploring the outdoors. I involve music in almost everything I do; I play drums and try to see live concerts as much as possible.",
   },
-  introMessageTwo: {
-    id: `${scope}.intro.message.two`,
+  goalHeader: {
+    id: `${scope}.goal.header`,
+    defaultMessage: "What's My Goal?",
+  },
+  goalMessage: {
+    id: `${scope}.goal.message`,
     defaultMessage: "I aim to grow my technical skills and ideally contribute to an environmental or humanitarian company. I’m a personable, curious and experienced developer with contemporary and diverse skills. I was a software tutor and kayak tour guide before I began my career, showing my ability to communicate, lead, teach respectfully and meet the expectations of both my employer and the customer.",
   },
   careerHeader: {

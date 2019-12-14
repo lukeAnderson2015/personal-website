@@ -9,7 +9,7 @@ import { FormattedMessage } from 'react-intl';
 import seattle_ferry from '../../Images/seattle_ferry.jpg';
 import H2 from 'components/H2';
 import Section from '../HomePage/Section';
-import Img from 'components/Img';
+import TravelImg from './TravelImg';
 import messages, {travelIntroStatement, travelIntroPartTwo} from './messages';
 import {locations} from './locations';
 
@@ -17,8 +17,10 @@ export default function TravelPage() {
 
   function buildImageScroller(images) {
     return images.map(i => {
-      <div style={{display: 'inline-block'}}>
-        <Img src={i.src}/>
+      <div style={{flex: '0 0 auto'}}>
+        TESTTEST
+        <TravelImg src={i.src} alt="img-not-found"/>
+        <p>{i.caption}</p>
       </div>
     })
   }
@@ -33,18 +35,23 @@ export default function TravelPage() {
   };
 
   const travelLocations = locations.map (l => {
-    return <li key={l.title}>
-      <h3>
-        {l.title}
-      </h3>
-      <div style={{overflowX: 'scroll', overflowY: 'hidden', whiteSpace: 'nowrap'}}>
-        {buildImageScroller(l.images)}
+    return(
+      <div key={l.title}>
+        <h3>
+          {l.title}
+        </h3>
+        <p>{l.summary}</p>
+        <p>{l.images[0].src}</p>
+        <TravelImg src={l.images[0].src} alt="img-not-found"/>
+
+        <div style={{display: 'flex', flexWrap: 'nowrap', overflowX: 'auto', height: '500px', width: '500px'}}>
+          {buildImageScroller(l.images)}
+        </div>
+        <p>
+          {buildJournalEntries(l.journalEntries)}
+        </p>
       </div>
-      <h4>{l.summary}</h4>
-      <p>
-        {buildJournalEntries(l.journalEntries)}
-      </p>
-    </li>;
+    );
   })
   
   return (
@@ -73,9 +80,7 @@ export default function TravelPage() {
           {travelIntroPartTwo}
         </p>
 
-        <ul>
-          {travelLocations}
-        </ul>
+        {travelLocations}
       </Section>
     </div>
   );

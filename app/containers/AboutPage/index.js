@@ -26,12 +26,16 @@ export default function AboutPage() {
             <FormattedMessage {...messages.introHeader} />
         </H2>
         <p>
-            <FormattedMessage {...messages.introMessage} />
-          </p>
-          <p>
-            <FormattedMessage {...messages.introMessageTwo} />
-          </p>
-
+          <FormattedMessage {...messages.introMessage} />
+        </p>
+        <div style={{width: '100%', borderBottom: 'solid 1px grey', marginTop: '25px'}} />
+        <H2 style={{textAlign: 'center', marginBottom: 0}}>
+            <FormattedMessage {...messages.goalHeader} />
+        </H2>
+        <p>
+          <FormattedMessage {...messages.goalMessage} />
+        </p>
+        <div style={{width: '100%', borderBottom: 'solid 1px grey', marginTop: '25px'}} />
         <H2 style={{textAlign: 'center'}}>
             <FormattedMessage {...messages.careerHeader} />
         </H2>
