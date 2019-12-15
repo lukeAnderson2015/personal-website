@@ -11,7 +11,7 @@ function Footer() {
     <Wrapper>
       <section style={{marginRight: "30px", display: 'flex', flexDirection: 'column'}}>
         <FormattedMessage {...messages.licenseMessage} />
-        <a href='https://icons8.com'>Icons By Icons8</a>
+        <a href='https://icons8.com' target="_blank">Icons By Icons8</a>
       </section>
       <section>
         <FormattedMessage {...messages.authorMessage} />
