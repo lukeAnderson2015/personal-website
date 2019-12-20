@@ -81,7 +81,7 @@ export function HomePage({
       //     content="A brief dig into Lukas Anderson"
       //   />
       // </Helmet>
-      <PanelSection style={{backgroundImage: `url(${spiral_plant})`, textDecorationColor: 'white'}}>
+      <PanelSection style={{backgroundImage: `url(${spiral_plant})`, backgroundSize: 'cover', textDecorationColor: 'white', height: '768px'}}>
         <H2Centered >
           <FormattedMessage {...messages.firstPanelHeader} />
         </H2Centered>

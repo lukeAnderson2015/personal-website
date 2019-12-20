@@ -23,7 +23,7 @@ import GlobalStyle from '../../global-styles';
 const AppWrapper = styled.div`
   width: 100%;
   display: flex;
-  min-height: 766;
+  height: 100%;
   flex-direction: column;
   background: -webkit-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
   background: -o-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
