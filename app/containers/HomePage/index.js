@@ -20,12 +20,13 @@ import {
   makeSelectError,
 } from 'containers/App/selectors';
 import H2Centered from 'components/H2Centered';
-import spiral_plant from '../../images/spiral_plant.jpg';
 import Collapsible from 'components/Collapsible';
+import spiral_plant from '../../images/spiral_plant.jpg';
 import AtPrefix from './AtPrefix';
 import Form from './Form';
 import Input from './Input';
 import PanelSection from './PanelSection';
+import PageSlider from './PageSlider';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
@@ -35,7 +36,7 @@ import saga from './saga';
 import Hexagon from 'react-hexagon';
 import articles from './articles';
 import kauaiCanyon from '../../images/kauaiCanyon.jpg';
-import {CircularImg} from 'components/Header/CircularImg';
+import { CircularImg } from 'components/Header/CircularImg';
 
 const key = 'home';
 
@@ -61,42 +62,66 @@ export function HomePage({
     repos,
   };
 
-  const articleDropdowns = articles.map( (article, index) => {
-      return <article
-        style={{ height: 'auto', width: '70%', marginRight: '15%', marginLeft: '15%'}}
-        key={index}
-        > 
-        <div style={{ width: '50%', marginLeft: '25%', padding: '15px 0px 0px 15px', borderBottom: 'grey solid 1px'}}/>
-        {/* <Collapsible title ={`${article.title} - ${article.date}`}> */}
-          {article.title} - {article.date}
-          <p>{article.text}</p>
-        {/* </Collapsible> */}
-      </article> 
-  })
-
-  return (<div>
-      <Helmet>
-        <title>Lukas Anderson</title>
-        <meta
-          name="description"
-          content="A brief dig into Lukas Anderson"
+  const articleDropdowns = articles.map((article, index) => {
+    return <article
+      style={{
+          height: 'auto',
+          width: '70%',
+          marginRight: '15%',
+          marginLeft: '15%',
+        }}
+      key={index}
+    > 
+      <div
+          style={{
+            width: '50%',
+            marginLeft: '25%',
+            padding: '15px 0px 0px 15px',
+            borderBottom: 'grey solid 1px',
+          }}
         />
-      </Helmet>
-      <PanelSection style={{backgroundImage: `url(${spiral_plant})`, backgroundSize: 'cover', textDecorationColor: 'white', height: '768px'}}>
-        <div className="hoverFocusElement" style={{padding: '20px', height: '50%', backgroundColor: 'white', borderRadius: '5px'}}>
-          <CircularImg src={kauaiCanyon} alt="no-image-found" />
-            <H2Centered>
-              <FormattedMessage {...messages.firstPanelHeader} />
-            </H2Centered>
-            <p style={{textAlign: 'center'}}>
-              <FormattedMessage {...messages.firstPanelSubHeader} />
-            </p>
-        </div>
-      </PanelSection>
-      <div style={{position: 'fixed', display: 'block', backgroundColor: 'black', height: '350px', width: '50px'}}>
+      {/* <Collapsible title ={`${article.title} - ${article.date}`}> */}
+      {article.title} - {article.date}
+      <p>{article.text}</p>
+      {/* </Collapsible> */}
+    </article>
+    );
+  });
 
+  return (
+    <div>
+    <Helmet>
+      <title>Lukas Anderson</title>
+      <meta name="description" content="A brief dig into Lukas Anderson" />
+    </Helmet>
+    <PanelSection
+        style={{
+          backgroundImage: `url(${spiral_plant})`,
+          backgroundSize: 'cover',
+          textDecorationColor: 'white',
+          height: '768px',
+        }}
+      >
+      <div
+          className="hoverFocusElement"
+          style={{
+            padding: '20px',
+            height: '50%',
+            backgroundColor: 'white',
+            borderRadius: '5px',
+          }}
+        >
+        <CircularImg src={kauaiCanyon} alt="no-image-found" />
+        <H2Centered>
+          <FormattedMessage {...messages.firstPanelHeader} />
+        </H2Centered>
+        <p style={{textAlign: 'center'}}>
+          <FormattedMessage {...messages.firstPanelSubHeader} />
+        </p>
       </div>
-      </div>
+    </PanelSection>
+    <PageSlider vertical max={5} min={0} />
+  </div>
   );
 }
 
