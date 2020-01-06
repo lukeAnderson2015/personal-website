@@ -40,7 +40,7 @@ export default function App() {
       >
         <meta name="description" content="A collection of thoughts" />
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="" component={NotFoundPage} />

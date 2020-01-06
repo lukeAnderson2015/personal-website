@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 const PanelSection = styled.section`
-  padding-left: 10%;
-  padding-right: 10%
+  padding-left: 2%;
+  
+  display: flex;
+  align-items: center;
 
   height: 100vh;
   width: 100%;
 
-  &:first-child {
-    margin-top: 0;
+  .hoverFocusElement:hover {
+    background-color: red;
   }
 `;
 

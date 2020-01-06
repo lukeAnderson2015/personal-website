@@ -34,7 +34,8 @@ import reducer from './reducer';
 import saga from './saga';
 import Hexagon from 'react-hexagon';
 import articles from './articles';
-
+import kauaiCanyon from '../../images/kauaiCanyon.jpg';
+import {CircularImg} from 'components/Header/CircularImg';
 
 const key = 'home';
 
@@ -73,23 +74,29 @@ export function HomePage({
       </article> 
   })
 
-  return (
-      // <Helmet>
-      //   <title>Lukas Anderson</title>
-      //   <meta
-      //     name="description"
-      //     content="A brief dig into Lukas Anderson"
-      //   />
-      // </Helmet>
+  return (<div>
+      <Helmet>
+        <title>Lukas Anderson</title>
+        <meta
+          name="description"
+          content="A brief dig into Lukas Anderson"
+        />
+      </Helmet>
       <PanelSection style={{backgroundImage: `url(${spiral_plant})`, backgroundSize: 'cover', textDecorationColor: 'white', height: '768px'}}>
-        <H2Centered >
-          <FormattedMessage {...messages.firstPanelHeader} />
-        </H2Centered>
-        <p style={{textAlign: 'center'}}>
-          <FormattedMessage {...messages.firstPanelSubHeader} />
-        </p>
+        <div className="hoverFocusElement" style={{padding: '20px', height: '50%', backgroundColor: 'white', borderRadius: '5px'}}>
+          <CircularImg src={kauaiCanyon} alt="no-image-found" />
+            <H2Centered>
+              <FormattedMessage {...messages.firstPanelHeader} />
+            </H2Centered>
+            <p style={{textAlign: 'center'}}>
+              <FormattedMessage {...messages.firstPanelSubHeader} />
+            </p>
+        </div>
       </PanelSection>
-      
+      <div style={{position: 'fixed', display: 'block', backgroundColor: 'black', height: '350px', width: '50px'}}>
+
+      </div>
+      </div>
   );
 }
 
