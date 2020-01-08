@@ -6,13 +6,13 @@ export default class PageSlider extends React.Component {
     return (
       <div
         style={{
-          backgroundColor: 'grey',
+          backgroundColor: '#878787',
           borderRadius: '5px',
           opacity: '80%',
           position: 'fixed',
           top: '35vh',
-          right: '50px',
-          width: '25px',
+          padding: '15px',
+          right: '40px',
         }}
       >
         <input
