@@ -15,6 +15,6 @@ export default defineMessages({
   firstPanelSubHeader: {
     id: `${scope}.writings.subHeader`,
     defaultMessage:
-      'A brief introduction.',
+      'Developer. Explorer.',
   }
 });

@@ -25,10 +25,7 @@ const AppWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  background: -webkit-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: -o-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: -moz-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
+  background: #88f7dd;
 `;
 
 export default function App() {

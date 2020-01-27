@@ -3,7 +3,6 @@ import React from 'react';
 
 const StyledSlider = styled.div`
     display: flex;
-    justify-content: center;
     overflow-x: auto;
     max-width: inherit;
     max-height: 100vh;

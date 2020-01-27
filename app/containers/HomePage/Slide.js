@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 const StyledSlide = styled.div`
   flex-shrink: 0;
-  width: 50vw;
+  width: 50%;
   height: auto;
   scroll-snap-align: start;
 `;
