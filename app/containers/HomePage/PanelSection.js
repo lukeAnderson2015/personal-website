@@ -1,15 +1,26 @@
 import styled from 'styled-components';
+import React from 'react';
 
-const PanelSection = styled.section`
+const Section = styled.section`
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  height: 100vh;
-  width: 100vw;
+  background-size: cover;
 
-  .hoverFocusElement:hover {
-    background-color: red;
-  }
+  max-width: 100%;
+  max-height: 100vh;
 `;
 
-export default PanelSection;
+export default function PanelSection(props) {
+  return (
+    <Section
+      style={{
+        ...props.style,
+        backgroundImage: `url(${props.backgroundImage})`,
+      }}
+    >
+      {props.children}
+    </Section>
+  );
+}

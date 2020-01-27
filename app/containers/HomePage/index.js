@@ -21,14 +21,11 @@ import {
 } from 'containers/App/selectors';
 import H2Centered from 'components/H2Centered';
 import Collapsible from 'components/Collapsible';
-import Hexagon from 'react-hexagon';
 import { CircularImg } from 'components/Header/CircularImg';
-import AtPrefix from './AtPrefix';
-import Form from './Form';
 import Slider from './Slider';
 import Slide from './Slide';
 import PanelSection from './PanelSection';
-import PageSlider from './PageSlider';
+import PanelSectionHeader from './PanelSectionHeader';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
@@ -36,6 +33,7 @@ import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import articles from './articles';
+import IntroBox from './IntroBox';
 
 // Pictures
 import spiralPlant from '../../images/spiral_plant.jpg';
@@ -44,7 +42,7 @@ import divingSelfie from '../../images/diving_selfie.jpg';
 import seattleFerry from '../../images/seattle_ferry.jpg';
 import stickyWaterfall from '../../images/sticky_waterfall.jpg';
 
-const pictures = [kauaiCanyon, divingSelfie, seattleFerry, stickyWaterfall];
+const pictures = [divingSelfie, spiralPlant, stickyWaterfall];
 
 const key = 'home';
 
@@ -111,24 +109,8 @@ export function HomePage({
         <title>Lukas Anderson</title>
         <meta name="description" content="A brief dig into Lukas Anderson" />
       </Helmet>
-      <PanelSection
-        style={{
-          backgroundImage: `url(${spiralPlant})`,
-          backgroundSize: 'cover',
-          textDecorationColor: 'white',
-          height: '100vh',
-        }}
-      >
-        <div
-          className="hoverFocusElement" // TODO add highlight effect
-          style={{
-            marginLeft: '2%',
-            padding: '20px',
-            height: 'auto',
-            backgroundColor: 'white',
-            borderRadius: '5px',
-          }}
-        >
+      <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
+        <IntroBox>
           <CircularImg src={kauaiCanyon} alt="no-image-found" />
           <H2Centered>
             <FormattedMessage {...messages.firstPanelHeader} />
@@ -136,11 +118,16 @@ export function HomePage({
           <p style={{ textAlign: 'center' }}>
             <FormattedMessage {...messages.firstPanelSubHeader} />
           </p>
-        </div>
+        </IntroBox>
       </PanelSection>
 
       <PanelSection>
+        <PanelSectionHeader text="Travel & Photography" />
         <Slider>{slides}</Slider>
+      </PanelSection>
+
+      <PanelSection>
+        <PanelSectionHeader text="Writing" />
       </PanelSection>
     </div>
   );
