@@ -11,6 +11,7 @@ import quilotoaFlower from './quilotoa_flower.jpg';
 // one-off use
 import seattleFerry from './seattle_ferry.jpg';
 import kauaiCanyon from './kauai_canyon.jpg';
+import kauaiSunset from './kauai_sunset.jpg';
 
 const pictures = [
     quilotoaFlower,
@@ -19,12 +20,13 @@ const pictures = [
     spiralPlant,
     ecuadorFlower,
     divingSelfie,
-    ecuadorianCouncil,
-    amazonPirhana
+    amazonPirhana,
+    ecuadorianCouncil
 ];
 
 export {
     pictures,
     kauaiCanyon,
-    seattleFerry
+    seattleFerry,
+    kauaiSunset
 }

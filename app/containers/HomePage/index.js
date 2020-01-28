@@ -33,10 +33,10 @@ import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import IntroBox from './IntroBox';
-import ArticleSelector from './ArticleSelector';
+import ArticleViewer from './ArticleViewer';
 
 // Pictures
-import {pictures, kauaiCanyon, seattleFerry} from '../../images/all_images';
+import {pictures, kauaiCanyon, seattleFerry, kauaiSunset} from '../../images/all_images';
 
 const key = 'home';
 
@@ -94,10 +94,9 @@ export function HomePage({
         <Slider>{slides}</Slider>
       </PanelSection>
 
-      <PanelSection>
+      <PanelSection backgroundImage={kauaiSunset}>
         <PanelSectionHeader text="Writing" />
-        <ArticleSelector/>
-        {/* <Article article/> */}
+        <ArticleViewer/>
       </PanelSection>
     </div>
   );

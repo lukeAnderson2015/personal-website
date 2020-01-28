@@ -25,7 +25,6 @@ const AppWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  background: #88f7dd;
 `;
 
 export default function App() {
