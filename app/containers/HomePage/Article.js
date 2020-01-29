@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 
 const WrapperDiv = styled.div`
     max-width: 55vw;
-    max-height: 80vh;
-    margin-left: 50px;
+    max-height: 78vh;
 
     background: rgb(220, 220, 220, 0.6);
 `;
 
 const HeaderDiv = styled.div`
     width: 55vw;
+    height: 100px;
     position: absolute;
     padding-Left: 20px;
 
-    background: rgb(220, 220, 220, 0.6);
+    background: rgb(220, 220, 220, 0.7);
 `;
 const Title = styled.h2`
     width: 52vw;
@@ -34,10 +34,12 @@ const SubTitle = styled.p`
     font-style: italic;
 `;
 
-const Text = styled.p`
-    padding: 90px 20px 0px 20px;
+const Text = styled.div`
+    margin: 0px;
+    padding: 90px 25px 0px 25px;
     overflow-y: auto;
-    max-height: 73vh;
+    max-height: 78vh;
+    text-indent: 40px;
 `;
 
 export default class Article extends React.Component {
@@ -45,12 +47,14 @@ export default class Article extends React.Component {
     render() {
         let article = this.props.article || {};
 
+        let formattedText = article.text.split ('\n').map((paragraph, i) => <p key={i}>{paragraph}</p>);
+
         return <WrapperDiv>
                     <HeaderDiv>
                         <Title>{article.title ? article.title : "No Article Selected"}</Title>
                         <SubTitle>{`${article.date} ~ ${article.genre}`}</SubTitle>
                     </HeaderDiv>
-                <Text>{article.text}</Text>
+                <Text>{formattedText}</Text>
                 </WrapperDiv>;
     }
 }

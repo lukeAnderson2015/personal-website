@@ -15,6 +15,11 @@ export default defineMessages({
   authorMessage: {
     id: `${scope}.author.message`,
     defaultMessage:
-      'Site Design, Implementation, Photography and Writing by Luke Anderson. Credit to Max Stoiber for the boilerplate project.',
+      'Site Design, Implementation, Photography and Writing by Lukas Anderson.',
+  },
+  creditMessage: {
+    id: `${scope}.credit.message`,
+    defaultMessage:
+      'Credit to Max Stoiber for the ',
   },
 });

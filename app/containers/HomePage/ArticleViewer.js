@@ -6,10 +6,10 @@ import articles from './articles.js';
 
 const MainDiv = styled.div`
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 140px 15px 15px 15px;
+    justify-content: space-around;
+    padding: 140px 0px 0px 0px;
     height: 100vh;
+    width: 100vw;
 `;
 
 
@@ -34,7 +34,7 @@ const Title = styled.div`
 `;
 
 const TitleList = styled.div`
-    width: 33vw;
+    width: 28vw;
 `;
 
 export default class ArticleViewer extends React.Component{
@@ -50,10 +50,10 @@ export default class ArticleViewer extends React.Component{
 
     render() {
         const rows = articles.map(a => {
-            return <Title 
+            return <Title
                         style={a.id === this.state.selectedArticle.id ? {backgroundColor: 'rgb(220, 220, 220, 0.8)', textDecoration: 'underline'} : {} }
                         onClick={() => this.setSelectedArticle(a)}
-                        key={a.id}
+                        key={a.id} 
                     >
                         {a.title}
                     </Title>;

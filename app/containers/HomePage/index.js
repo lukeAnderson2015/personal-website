@@ -34,6 +34,8 @@ import reducer from './reducer';
 import saga from './saga';
 import IntroBox from './IntroBox';
 import ArticleViewer from './ArticleViewer';
+import downloadIcon from '../../images/icons8-download-resume-40.png';
+import Img from 'components/Img';
 
 // Pictures
 import {pictures, kauaiCanyon, seattleFerry, kauaiSunset} from '../../images/all_images';
@@ -77,6 +79,9 @@ export function HomePage({
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
       </Helmet>
+      <a href="/files/Resume_Lukas_Anderson.pdf" title="Download Resume" download style={{position: 'fixed', padding: '10px'}}>
+        <Img src={downloadIcon} alt="icon-unavailable"/>
+      </a>
       <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
         <IntroBox>
           <CircularImg src={kauaiCanyon} alt="no-image-found" />

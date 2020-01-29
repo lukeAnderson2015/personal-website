@@ -7,7 +7,6 @@ const Header = styled.h1`
   background-color: white;
   color: black;
   opacity: 70%;
-  border-radius: 5px;
   padding: 10px;
 `;
 
