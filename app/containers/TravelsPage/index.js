@@ -6,7 +6,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
-import seattle_ferry from '../../Images/seattle_ferry.jpg';
 import H2 from 'components/H2';
 import Section from '../HomePage/Section';
 import TravelImg from './TravelImg';

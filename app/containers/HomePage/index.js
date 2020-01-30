@@ -19,21 +19,26 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
-import H2 from 'components/H2';
+import H2Centered from 'components/H2Centered';
 import Collapsible from 'components/Collapsible';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
+import { CircularImg } from 'components/Header/CircularImg';
+import Slider from './Slider';
+import Slide from './Slide';
+import PanelSection from './PanelSection';
+import PanelSectionHeader from './PanelSectionHeader';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import Hexagon from 'react-hexagon';
-import articles from './articles';
+import IntroBox from './IntroBox';
+import ArticleViewer from './ArticleViewer';
+import linkedInIcon from '../../images/icons8-linkedin-64.png';
+import Img from 'components/Img';
+
+// Pictures
+import {pictures, weddingLukePortrait, seattleFerry, kauaiSunset} from '../../images/all_images';
 
 const key = 'home';
 
@@ -43,7 +48,6 @@ export function HomePage({
   error,
   repos,
   onSubmitForm,
-  onChangeUsername,
 }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
@@ -59,39 +63,50 @@ export function HomePage({
     repos,
   };
 
-  const articleDropdowns = articles.map( (article, index) => {
-      return <article
-        style={{ height: 'auto', width: '70%', marginRight: '15%', marginLeft: '15%'}}
-        key={index}
-        > 
-        <div style={{ width: '50%', marginLeft: '25%', padding: '15px 0px 0px 15px', borderBottom: 'grey solid 1px'}}/>
-        {/* <Collapsible title ={`${article.title} - ${article.date}`}> */}
-          {article.title} - {article.date}
-          <p>{article.text}</p>
-        {/* </Collapsible> */}
-      </article> 
-  })
+  const slides = pictures.map((p, i) => (
+    <Slide key={i}>
+      <img
+        src={p}
+        alt="image-unavailable"
+        style={{ maxHeight: '100%', maxWidth: '100%' }}
+      />
+    </Slide>
+  ));
 
   return (
     <div>
       <Helmet>
-        <title>Axel Home</title>
-        <meta
-          name="description"
-          content="A place to rotate your thoughts."
-        />
+        <title>Lukas Anderson</title>
+        <meta name="description" content="Lukas Anderson" />
       </Helmet>
-      <Section style={{marginTop: '90px'}}>
-        <H2 style={{textAlign: 'center'}}>
-          <FormattedMessage {...messages.writingsHeader} />
-        </H2>
-        <p style={{textAlign: 'center'}}>
-          <FormattedMessage {...messages.writingsSubHeader} />
-        </p>
-      </Section>
-      <Section>
-        {articleDropdowns}
-      </Section>
+      <a href="https://www.linkedin.com/in/lukas-anderson-4a786b42" target="_blank" title="LinkedIn" style={{position: 'fixed'}}>
+        <Img src={linkedInIcon} alt="icon-unavailable"/>
+      </a>
+      <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
+        <IntroBox>
+          <CircularImg src={weddingLukePortrait} alt="no-image-found" />
+          <H2Centered>
+            <FormattedMessage {...messages.firstPanelHeader} />
+          </H2Centered>
+          <p style={{ textAlign: 'center', fontStyle: 'italic' }}>
+            <FormattedMessage {...messages.firstPanelSubHeader} />
+          </p>
+        </IntroBox>
+      </PanelSection>
+
+      <PanelSectionHeader text="Travel & Photography" />
+      <PanelSection>
+        <Slider>{slides}</Slider>
+      </PanelSection>
+
+      <PanelSectionHeader text="Writing" />
+      <PanelSection backgroundImage={kauaiSunset}>
+        <ArticleViewer/>
+      </PanelSection>
+
+      {/* <PanelSection backgroundImage={kauaiSunset}>
+        <PanelSectionHeader text="Music" />
+      </PanelSection> */}
     </div>
   );
 }

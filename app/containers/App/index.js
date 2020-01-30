@@ -23,12 +23,8 @@ import GlobalStyle from '../../global-styles';
 const AppWrapper = styled.div`
   width: 100%;
   display: flex;
-  min-height: 100%;
+  height: 100%;
   flex-direction: column;
-  background: -webkit-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: -o-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: -moz-linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
-  background: linear-gradient(rgb(150, 200, 200), rgb(211, 211, 211));
 `;
 
 export default function App() {
@@ -40,11 +36,9 @@ export default function App() {
       >
         <meta name="description" content="A collection of thoughts" />
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/travels" component={TravelsPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

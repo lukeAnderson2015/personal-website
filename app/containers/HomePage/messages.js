@@ -8,13 +8,13 @@ import { defineMessages } from 'react-intl';
 export const scope = 'boilerplate.containers.HomePage';
 
 export default defineMessages({
-  writingsHeader: {
+  firstPanelHeader: {
     id: `${scope}.writings.header`,
-    defaultMessage: 'Assorted Writings',
+    defaultMessage: 'Lukas Anderson',
   },
-  writingsSubHeader: {
+  firstPanelSubHeader: {
     id: `${scope}.writings.subHeader`,
     defaultMessage:
-      'An assortment of thoughts, reflections and the occaisional rant.',
+      'Explorer. Creator. Developer.',
   }
 });
