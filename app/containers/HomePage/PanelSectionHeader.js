@@ -2,14 +2,17 @@ import styled from 'styled-components';
 import React from 'react';
 
 const Header = styled.h1`
-  position: absolute;
-  align-self: flex-start;
-  background-color: white;
-  color: black;
-  opacity: 70%;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: grey;
+  height: 100px;
+  width: auto;
 `;
 
 export default function PanelSectionHeader(props) {
-  return <Header>{props.text}</Header>;
+  return <Header style={{...props.style}}>
+            <span>{props.text}</span>
+          </Header>;
 }

@@ -34,11 +34,11 @@ import reducer from './reducer';
 import saga from './saga';
 import IntroBox from './IntroBox';
 import ArticleViewer from './ArticleViewer';
-import downloadIcon from '../../images/icons8-download-resume-40.png';
+import linkedInIcon from '../../images/icons8-linkedin-64.png';
 import Img from 'components/Img';
 
 // Pictures
-import {pictures, kauaiCanyon, seattleFerry, kauaiSunset} from '../../images/all_images';
+import {pictures, weddingLukePortrait, seattleFerry, kauaiSunset} from '../../images/all_images';
 
 const key = 'home';
 
@@ -79,30 +79,34 @@ export function HomePage({
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
       </Helmet>
-      <a href="/files/Resume_Lukas_Anderson.pdf" title="Download Resume" download style={{position: 'fixed', padding: '10px'}}>
-        <Img src={downloadIcon} alt="icon-unavailable"/>
+      <a href="https://www.linkedin.com/in/lukas-anderson-4a786b42" target="_blank" title="LinkedIn" style={{position: 'fixed'}}>
+        <Img src={linkedInIcon} alt="icon-unavailable"/>
       </a>
       <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
         <IntroBox>
-          <CircularImg src={kauaiCanyon} alt="no-image-found" />
+          <CircularImg src={weddingLukePortrait} alt="no-image-found" />
           <H2Centered>
             <FormattedMessage {...messages.firstPanelHeader} />
           </H2Centered>
-          <p style={{ textAlign: 'center' }}>
+          <p style={{ textAlign: 'center', fontStyle: 'italic' }}>
             <FormattedMessage {...messages.firstPanelSubHeader} />
           </p>
         </IntroBox>
       </PanelSection>
 
+      <PanelSectionHeader text="Travel & Photography" />
       <PanelSection>
-        <PanelSectionHeader text="Travel & Photography" />
         <Slider>{slides}</Slider>
       </PanelSection>
 
+      <PanelSectionHeader text="Writing" />
       <PanelSection backgroundImage={kauaiSunset}>
-        <PanelSectionHeader text="Writing" />
         <ArticleViewer/>
       </PanelSection>
+
+      {/* <PanelSection backgroundImage={kauaiSunset}>
+        <PanelSectionHeader text="Music" />
+      </PanelSection> */}
     </div>
   );
 }
