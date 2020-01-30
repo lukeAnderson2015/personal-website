@@ -35,7 +35,8 @@ const selectStyles = {
         textAlign: "center",
         borderBottom: 'solid 1px grey',
         ':hover': {
-            cursor: 'pointer'
+            cursor: 'pointer',
+            backgroundColor: 'rgb(75, 130, 160)'
         }
     }),
     valueContainer: (provided, state) => ({
@@ -47,13 +48,15 @@ const selectStyles = {
         ...provided,
         width: '75px',
     }),
-    indicatorContainer: (provided, state) => ({
+    dropdownIndicator: (provided, state) => ({
         ...provided,
+        marginLeft: '20px'
     }),
     container: (provided, state) => ({
         ...provided,
         width: '65vw',
-        height: '100px'
+        height: '100px',
+        borderBottom: 'solid 1px black'
     }),
     control: (provided, state) => ({
         ...provided,
