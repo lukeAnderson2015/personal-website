@@ -11,7 +11,7 @@ const MainDiv = styled.div`
     flex-flow: column;
     align-content: space-evenly;
 
-    padding: 3vh 0px 0px 0px;
+    padding: 5vh 0px 0px 0px;
     height: 100vh;
     width: 100vw;
 `;
@@ -20,7 +20,7 @@ export default class ArticleViewer extends React.Component{
 
     
     state = {
-        selectedArticle: articles[1]
+        selectedArticle: articles[0]
     }
 
     setSelectedArticle = (selectedArticle) => {
@@ -30,7 +30,13 @@ export default class ArticleViewer extends React.Component{
     render() {
         return (
             <MainDiv>
-                <TitleListDropdown id="titleListDropdown" articles={articles} setSelectedArticle={this.setSelectedArticle} selectedArticle={this.state.selectedArticle} />
+                <TitleListDropdown
+                    id="titleListDropdown"
+                    articles={articles}
+                    setSelectedArticle={this.setSelectedArticle}
+                    selectedArticle={this.state.selectedArticle}
+                    inputValue={this.state.selectedArticle.title}
+                />
                 <Article article={this.state.selectedArticle}/>
             </MainDiv>
         );

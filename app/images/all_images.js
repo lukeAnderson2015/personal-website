@@ -36,6 +36,7 @@ import weddingLukePortrait from './wedding_luke.jpg';
 const pictures = [
     quilotoaFlower,
     cuencaGrain,
+    ecuadorRedPlant,
     spiralPlant,
     // bigBuddha,
     costaRicaHermit,
@@ -46,7 +47,6 @@ const pictures = [
     // eatingCrickets,
     // eatingScorpion,
     ecuadorOrangeFlower,
-    ecuadorRedPlant,
     // ecuadorShrooms,
     galapagosCrab,
     amazonPirhana,
@@ -56,9 +56,9 @@ const pictures = [
     // marinaBaySandsView,
     rainbowMountain,
     machuPicchu,
-    wat_1,
     singaporeDragonfly,
     thailandMoped,
+    wat_1,
     wat_2,
     ecuadorianCouncil
 ];

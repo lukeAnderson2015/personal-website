@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 
 const WrapperDiv = styled.div`
     width: 65vw;
-    height: 81vh;
-    background: rgb(220, 220, 220, 0.8);
+    max-height: 80vh;
+    background: rgb(220, 220, 220, 0.7);
+    padding: 0px 0px 10px 15px;
     border-radius: 5px;
 `;
 
 const Text = styled.div`
-    padding: 10px 25px 0px 25px;
+    padding-right: 10px;
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: 78vh;
     text-indent: 40px;
 `;
 
