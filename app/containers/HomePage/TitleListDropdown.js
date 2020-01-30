@@ -1,15 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import Select from 'react-select';
 
-const Select = styled.select`
-    width: 65vw;
-    height: 50px;
-`;
-
-const Title = styled.h2`
+const Title = styled.h4`
     width: 62vw;
     margin-bottom: 0px;
-
     font-style: italic;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -18,60 +13,70 @@ const Title = styled.h2`
 
 const SubTitle = styled.p`
     margin-top: 0;
-    
     font-weight: normal;
     font-style: italic;
 `;
 
-const Option = styled.option`
-    display: inline-block;
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
-    background-color: rgb(220, 220, 220, 0.6);
-
-    :hover {
-        border: solid grey 1px;
-        cursor: pointer;
-        color: white;
-        background-color: rgb(25, 76, 127, 0.8);
-    }
-`;
-
 export default class TitleListDropdown extends React.Component {
 
-    state = {
-        dropdownOpen: false
-    }
-
-    setDropdown(bool) {
-        this.setState({dropdownOpen: bool})
-    }
-
-
     render() {
-        const options = this.props.options.map(a => {
-            return <Option
-                        style={a.id === this.state.selectedArticle.id ? {backgroundColor: 'rgb(25, 76, 127, 0.85)', color: 'white', textDecoration: 'underline'} : {} }
-                        onClick={() => this.setSelectedArticle(a)}
-                        value={a.title}
-                        key={a.id} 
-                    >
-                        <Title>{a.title ? a.title : "No Article Selected"}</Title>
-                        <SubTitle>{`${a.date} ~ ${a.genre}`}</SubTitle>
-                    </Option>;
-        });
+        
+        const selectStyles = {
+            option: (provided, state) => ({
+                ...provided,
+                backgroundColor: 'rgb(220, 220, 220)',
+                
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textAlign: "center",
+            }),
+            valueContainer: (provided, state) => ({
+                ...provided,
+                width: '300px',
+                height: '50px'
+            }),
+            container: (provided, state) => ({
+                ...provided,
+                width: '65vw',
+                height: '50px'
+            }),
+            menu: (provided, state) => ({
+                ...provided,
+                margin: 0
+            }),
+            menuList: (provided, state) => ({
+                ...provided,
+                padding: 0
+            })
+        };
+
+        const options = this.props.articles.map(opt => {
+                    return {
+                        value: opt,
+                        // label: `${opt.title} ~ ${opt.date}/${opt.genre}`
+                        label: opt.title
+                    };
+                });
+
+        const formatOptionLabel = ({value, label}) => (
+            <div style={{display: 'flex', flexFlow: 'column'}}>
+                <Title>{label}</Title>
+                <SubTitle>{value ? `${value.date} ~ ${value.genre}` : ''}</SubTitle>
+            </div>
+        );
 
         return (
-            <Select name="articleSelect" onClick={() => this.setDropdown(!this.state.dropdownOpen)}>
-                {options}
-            </Select>
+            <Select 
+                styles={selectStyles}
+                value={this.props.selectedArticle.title}
+                onChange={obj => this.props.setSelectedArticle(obj.value)}
+                options={options}
+                formatOptionLabel={formatOptionLabel}
+                noOptionsMessage="Doesn't look like anything at all."
+                placeholder="Doesn't look like anything at all."
+                menuPortalTarget={document.getElementById('titleListDropdown')}
+            />
         );
     }
 }

@@ -7,9 +7,12 @@ import TitleListDropdown from './TitleListDropdown.js';
 
 const MainDiv = styled.div`
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
+    align-content: space-evenly;
+
     padding: 3vh 0px 0px 0px;
-    height: 95vh;
+    height: 100vh;
     width: 100vw;
 `;
 
@@ -17,7 +20,7 @@ export default class ArticleViewer extends React.Component{
 
     
     state = {
-        selectedArticle: articles[2]
+        selectedArticle: articles[1]
     }
 
     setSelectedArticle = (selectedArticle) => {
@@ -25,10 +28,9 @@ export default class ArticleViewer extends React.Component{
     }
 
     render() {
-        
         return (
             <MainDiv>
-                <TitleListDropdown options={articles} />
+                <TitleListDropdown id="titleListDropdown" articles={articles} setSelectedArticle={this.setSelectedArticle} selectedArticle={this.state.selectedArticle} />
                 <Article article={this.state.selectedArticle}/>
             </MainDiv>
         );

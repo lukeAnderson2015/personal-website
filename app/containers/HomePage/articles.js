@@ -15,7 +15,7 @@ const articles = [
         id: 0,
         title: 'About Me',
         date: '2/3/94',
-        text: '',
+        text: 'I bring valuable communication, creativity, problem solving and technical skills. My diverse experience covers industry-leading software tools and processes, enabling me to produce quality code that exceeds expectations. I\'ve worked on a variety of complex SaaS applications involving React.js, Typescript, Node.js, Java Spring and SQL. I\'ve worked in team-based, agile environments and am familiar with Kanban and Scrum development. I was a software tutor and tour guide before I began my career, showing my ability to lead, teach respectfully and meet the expectations of both my employer and the customer. My ability to effectively communicate feature parameters, prototype and wire-frame my ideas, diagnose process hiccups and effectively work through unexpected hurdles sets me apart from many developers.',
         genre: 'biographical'
     },{
         id: 3,
