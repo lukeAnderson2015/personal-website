@@ -5,9 +5,11 @@ const Header = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  color: grey;
-  height: 100px;
+  font-size: 50px;
+  font-family: 'Tangerine', serif;
+
+  color: rgb(115,115,115);
+  height: 70px;
   width: auto;
 `;
 
