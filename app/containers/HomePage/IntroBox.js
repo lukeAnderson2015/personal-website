@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const Div = styled.div`
   margin-left: 1.5%;
   padding: 20px;
-  background-color: white;
-  border-radius: 5px;
+  color: white;
 `;
 
 export default function IntroBox(props) {

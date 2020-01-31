@@ -38,7 +38,7 @@ import linkedInIcon from '../../images/icons8-linkedin-64.png';
 import Img from 'components/Img';
 
 // Pictures
-import {pictures, weddingLukePortrait, seattleFerry, kauaiSunset} from '../../images/all_images';
+import {pictures, weddingLukePortrait, seattleFerry, phuketSnorkel} from '../../images/all_images';
 
 const key = 'home';
 
@@ -100,7 +100,7 @@ export function HomePage({
       </PanelSection>
 
       <PanelSectionHeader text="Writing" />
-      <PanelSection backgroundImage={kauaiSunset}>
+      <PanelSection backgroundImage={phuketSnorkel}>
         <ArticleViewer/>
       </PanelSection>
 

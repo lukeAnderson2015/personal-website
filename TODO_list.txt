@@ -1,0 +1,7 @@
+- arrows on photo slider
+- auto slide photos?
+- Belize photos
+- colorado photos
+- photo explorer (filters, etc)
+- async photo load
+- navigation buttons

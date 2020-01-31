@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const WrapperDiv = styled.div`
     width: 65vw;
     max-height: 80vh;
-    background: rgb(220, 220, 220, 0.7);
+    color: white;
     padding: 0px 0px 10px 15px;
     border-radius: 5px;
 `;

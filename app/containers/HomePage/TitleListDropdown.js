@@ -50,19 +50,19 @@ const selectStyles = {
     }),
     dropdownIndicator: (provided, state) => ({
         ...provided,
-        marginLeft: '20px'
+        marginLeft: '20px',
+        color: "white"
     }),
     container: (provided, state) => ({
         ...provided,
         width: '65vw',
         height: '100px',
-        borderBottom: 'solid 1px black'
     }),
     control: (provided, state) => ({
         ...provided,
         border: '0px',
         height: '100px',
-        background: 'rgb(220, 220, 220, 0.7)',
+        background: 'rgb(220, 220, 220, 0.6)',
     }),
     menu: (provided, state) => ({
         ...provided,
@@ -75,7 +75,8 @@ const selectStyles = {
     singleValue: (provided, state) => ({
         ...provided,
         padding: '0px 0px 0px 50px',
-        fontSize: '1.1em'
+        fontSize: '1.1em',
+
     })
 };
 
