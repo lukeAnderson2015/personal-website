@@ -6,7 +6,7 @@ const Header = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  font-family: 'Tangerine', serif;
+  font-family: 'Jim Nightshade', italic;
 
   color: rgb(115,115,115);
   height: 70px;
@@ -14,7 +14,7 @@ const Header = styled.h1`
 `;
 
 export default function PanelSectionHeader(props) {
-  return <Header style={{...props.style}}>
+  return <Header style={{...props.style}} id={props.id}>
             <span>{props.text}</span>
           </Header>;
 }

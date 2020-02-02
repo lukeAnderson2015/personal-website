@@ -5,7 +5,7 @@ const StyledSlider = styled.div`
     display: flex;
     overflow-x: auto;
     max-width: inherit;
-    max-height: 100vh;
+    height: 100vh;
 
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;  

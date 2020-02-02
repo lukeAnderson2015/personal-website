@@ -21,7 +21,7 @@ import {
 } from 'containers/App/selectors';
 import H2Centered from 'components/H2Centered';
 import Collapsible from 'components/Collapsible';
-import { CircularImg } from 'components/Header/CircularImg';
+import CircularImg from 'components/Header/CircularImg';
 import Slider from './Slider';
 import Slide from './Slide';
 import PanelSection from './PanelSection';
@@ -34,11 +34,10 @@ import reducer from './reducer';
 import saga from './saga';
 import IntroBox from './IntroBox';
 import ArticleViewer from './ArticleViewer';
-import linkedInIcon from '../../images/icons8-linkedin-64.png';
-import Img from 'components/Img';
+import FixedOverlay from './FixedOverlay';
 
 // Pictures
-import {pictures, weddingLukePortrait, seattleFerry, phuketSnorkel} from '../../images/all_images';
+import {pictures, weddingLukePortrait, seattleFerry, phuketSnorkel, kauaiSunset} from '../../images/all_images';
 
 const key = 'home';
 
@@ -79,10 +78,8 @@ export function HomePage({
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
       </Helmet>
-      <a href="https://www.linkedin.com/in/lukas-anderson-4a786b42" target="_blank" title="LinkedIn" style={{position: 'fixed'}}>
-        <Img src={linkedInIcon} alt="icon-unavailable"/>
-      </a>
-      <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
+      <FixedOverlay/>
+      <PanelSection id="home" backgroundImage={seattleFerry} style={{ height: '100vh' }}>
         <IntroBox>
           <CircularImg src={weddingLukePortrait} alt="no-image-found" />
           <H2Centered>
@@ -94,19 +91,20 @@ export function HomePage({
         </IntroBox>
       </PanelSection>
 
-      <PanelSectionHeader text="Travel & Photography" />
+      <PanelSectionHeader text="Travel & Photography" id="travel-and-photography" />
       <PanelSection>
         <Slider>{slides}</Slider>
       </PanelSection>
 
-      <PanelSectionHeader text="Writing" />
+      <PanelSectionHeader text="Writing" id="writing"/>
       <PanelSection backgroundImage={phuketSnorkel}>
         <ArticleViewer/>
       </PanelSection>
 
-      {/* <PanelSection backgroundImage={kauaiSunset}>
-        <PanelSectionHeader text="Music" />
-      </PanelSection> */}
+      <PanelSectionHeader text="Music" id="music"/>
+      <PanelSection backgroundImage={kauaiSunset}>
+          <div style={{height: '100vh'}}>test</div>
+        </PanelSection>
     </div>
   );
 }
