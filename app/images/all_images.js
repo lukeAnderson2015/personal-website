@@ -49,12 +49,6 @@ const pictures = [
     // bigBuddha,
     costaRicaHermit,
     cuscoHummingbird,
-    babyElephant,
-    elephantProfile,
-    impala,
-    lionKing,
-    lionProfile,
-    lionYawn,
     ecuadorOrangeFlower,
     galapagosCrab,
     amazonPirhana,
@@ -74,7 +68,13 @@ const pictures = [
     thailandMoped,
     wat_1,
     wat_2,
-    ecuadorianCouncil
+    ecuadorianCouncil,
+    babyElephant,
+    elephantProfile,
+    impala,
+    lionKing,
+    lionProfile,
+    lionYawn,
 ];
 
 export {

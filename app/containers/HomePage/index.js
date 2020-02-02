@@ -34,8 +34,7 @@ import reducer from './reducer';
 import saga from './saga';
 import IntroBox from './IntroBox';
 import ArticleViewer from './ArticleViewer';
-import linkedInIcon from '../../images/icons8-linkedin-64.png';
-import Img from 'components/Img';
+import FixedOverlay from './FixedOverlay';
 
 // Pictures
 import {pictures, weddingLukePortrait, seattleFerry, phuketSnorkel} from '../../images/all_images';
@@ -79,9 +78,7 @@ export function HomePage({
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
       </Helmet>
-      <a href="https://www.linkedin.com/in/lukas-anderson-4a786b42" target="_blank" title="LinkedIn" style={{position: 'fixed'}}>
-        <Img src={linkedInIcon} alt="icon-unavailable"/>
-      </a>
+      <FixedOverlay/>
       <PanelSection backgroundImage={seattleFerry} style={{ height: '100vh' }}>
         <IntroBox>
           <CircularImg src={weddingLukePortrait} alt="no-image-found" />
