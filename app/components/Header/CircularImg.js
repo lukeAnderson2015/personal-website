@@ -11,7 +11,7 @@ const CircularInnerImg = styled(NormalImg)`
     opacity: 100%;
 `;
 
-export function CircularImg(props) {
+export default function CircularImg(props) {
     let marginTop = props.style && props.style.marginTop ? props.style.marginTop : '0px';
     return <div 
             style={{width: '210px', height: '210px', marginTop, zIndex: 999, overflow: 'hidden', borderRadius: '50%'}}>

@@ -14,7 +14,7 @@ const Header = styled.h1`
 `;
 
 export default function PanelSectionHeader(props) {
-  return <Header style={{...props.style}}>
+  return <Header style={{...props.style}} id={props.id}>
             <span>{props.text}</span>
           </Header>;
 }

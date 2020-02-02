@@ -19,6 +19,7 @@ export default function PanelSection(props) {
         ...props.style,
         backgroundImage: `url(${props.backgroundImage})`,
       }}
+      id={props.id}
     >
       {props.children}
     </Section>
