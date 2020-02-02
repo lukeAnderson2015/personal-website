@@ -15,6 +15,16 @@ const Wrapper = styled.div`
 
 const NavBarWrapper = styled.div`
     display: flex;
+    width: 20vw;
+    background: linear-gradient(180deg, rgb(26, 109, 255), rgb(200, 34, 255));
+    border-radius: 10px;
+
+`;
+
+const NavBarItem = styled.a`
+    height: 50px;
+    border-radius: 10px;
+    border: solid black 1px;
 
 `;
 
@@ -27,7 +37,8 @@ export default class FixedOverlay extends React.Component {
                     <Img src={linkedInIcon} alt="icon-unavailable"/>
                 </a>
                 <NavBarWrapper>
-
+                    <NavBarItem><p>Travel & Photography</p></NavBarItem>
+                    <NavBarItem><p>Writing</p></NavBarItem>
                 </NavBarWrapper>
             </Wrapper>
         );
