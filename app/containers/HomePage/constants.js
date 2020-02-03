@@ -9,5 +9,4 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
-export const CLICK_COLLAPSIBLE = 'boilerplate/Home/CLICK_COLLAPSIBLE';
+export const SELECT_ARTICLE = 'boilerplate/Home/SELECT_ARTICLE';

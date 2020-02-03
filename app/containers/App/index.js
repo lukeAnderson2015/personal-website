@@ -12,8 +12,6 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
-import AboutPage from 'containers/AboutPage/Loadable';
-import TravelsPage from 'containers/TravelsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -32,11 +30,11 @@ export default function App() {
     <AppWrapper>
       <Helmet
         titleTemplate="%s"
-        defaultTitle=""
+        defaultTitle="Lukas Anderson"
       >
-        <meta name="description" content="A collection of thoughts" />
+        <meta name="description" content="Lukas Anderson Personal Website" />
       </Helmet>
-      {/* <Header /> */}
+      <Header/>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="" component={NotFoundPage} />

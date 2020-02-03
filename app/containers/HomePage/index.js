@@ -1,10 +1,9 @@
 /*
- * HomePage
+ * Single Page App
  *
- * This is the first thing users see of our App, at the '/' route
  */
 
-import React, { useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
@@ -12,15 +11,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { useInjectReducer } from 'utils/injectReducer';
-import { useInjectSaga } from 'utils/injectSaga';
-import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError,
-} from 'containers/App/selectors';
 import H2Centered from 'components/H2Centered';
-import Collapsible from 'components/Collapsible';
 import CircularImg from 'components/Header/CircularImg';
 import Slider from './Slider';
 import Slide from './Slide';
@@ -28,39 +19,13 @@ import PanelSection from './PanelSection';
 import PanelSectionHeader from './PanelSectionHeader';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
 import IntroBox from './IntroBox';
 import ArticleViewer from './ArticleViewer';
-import FixedOverlay from './FixedOverlay';
 
 // Pictures
 import {pictures, weddingLukePortrait, seattleFerry, phuketSnorkel, kauaiSunset} from '../../images/all_images';
 
-const key = 'home';
-
-export function HomePage({
-  username,
-  loading,
-  error,
-  repos,
-  onSubmitForm,
-}) {
-  useInjectReducer({ key, reducer });
-  useInjectSaga({ key, saga });
-
-  useEffect(() => {
-    // When initial state username is not null, submit the form to load repos
-    if (username && username.trim().length > 0) onSubmitForm();
-  }, []);
-
-  const reposListProps = {
-    loading,
-    error,
-    repos,
-  };
+export function HomePage () {
 
   const slides = pictures.map((p, i) => (
     <Slide key={i}>
@@ -76,9 +41,8 @@ export function HomePage({
     <div>
       <Helmet>
         <title>Lukas Anderson</title>
-        <meta name="description" content="Lukas Anderson" />
+        <meta name="Lukas Anderson Personal Website" content="Lukas Anderson" />
       </Helmet>
-      <FixedOverlay/>
       <PanelSection id="home" backgroundImage={seattleFerry} style={{ height: '100vh' }}>
         <IntroBox>
           <CircularImg src={weddingLukePortrait} alt="no-image-found" />
@@ -118,16 +82,10 @@ HomePage.propTypes = {
   onChangeUsername: PropTypes.func,
 };
 
-const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-});
+const mapStateToProps = createStructuredSelector({});
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
     onSubmitForm: evt => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());

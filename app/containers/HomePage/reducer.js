@@ -8,7 +8,7 @@
  */
 
 import produce from 'immer';
-import { CHANGE_USERNAME, CLICK_COLLAPSIBLE } from './constants';
+import { SELECT_ARTICLE } from './constants';
 
 // The initial state of the App
 export const initialState = {
@@ -20,19 +20,8 @@ export const initialState = {
 const homeReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case CLICK_COLLAPSIBLE:
-        // reverse state of selected collapsible by id
-        const newMap = {...state.collapsibleMap};
-        if (newMap[action.id]) {
-          delete newMap[action.id];
-        } else {
-          newMap[action.id] = true;
-        }
-        draft.collapsibleMap = newMap;
-        break;
-      case CHANGE_USERNAME:
-        // Delete prefixed '@' from the github username
-        draft.username = action.username.replace(/@/gi, '');
+      case SELECT_ARTICLE:
+        draft.selectedArticle = action.selectedArticle;
         break;
     }
   });
