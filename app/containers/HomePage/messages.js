@@ -1,20 +1,15 @@
 /*
  * HomePage Messages
  *
- * This contains all the text for the HomePage component.
+ * This contains all the text for the HomePage container.
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.HomePage';
+export const scope = 'app.containers.HomePage';
 
 export default defineMessages({
-  firstPanelHeader: {
-    id: `${scope}.writings.header`,
-    defaultMessage: 'Lukas Anderson',
+  header: {
+    id: `${scope}.header`,
+    defaultMessage: 'This is the HomePage container!',
   },
-  firstPanelSubHeader: {
-    id: `${scope}.writings.subHeader`,
-    defaultMessage:
-      'Explorer. Creator. Developer.',
-  }
 });
