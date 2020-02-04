@@ -6,9 +6,9 @@
 
 import React, { memo } from 'react';
 import styled from 'styled-components';
+import Img from 'components/Img';
 
 import linkedInIcon from '../../images/icons8-linkedin-64.png';
-import Img from 'components/Img';
 import cameraIcon from '../../images/icons8-camera-64.png';
 import musicIcon from '../../images/icons8-music-64.png';
 import homeIcon from '../../images/icons8-home-page-64.png';

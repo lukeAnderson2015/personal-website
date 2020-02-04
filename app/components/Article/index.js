@@ -7,6 +7,7 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ShortId from 'shortid';
 
 const WrapperDiv = styled.div`
   width: 65vw;
@@ -29,7 +30,7 @@ function Article(props) {
   // account for \n newlines in text
   const formattedText = article.text
     .split('\n')
-    .map(paragraph => <p>{paragraph}</p>);
+    .map(paragraph => <p key={ShortId.generate()}>{paragraph}</p>);
 
   return (
     <WrapperDiv>

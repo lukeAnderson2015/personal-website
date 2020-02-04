@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const articles = [
   {
     id: 1,
@@ -106,3 +105,5 @@ const articles = [
     genre: 'blah',
   },
 ];
+
+export default articles;

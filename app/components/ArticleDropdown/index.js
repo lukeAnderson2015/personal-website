@@ -117,7 +117,7 @@ function ArticleDropdown(props) {
 }
 
 ArticleDropdown.propTypes = {
-  articles: PropTypes.object,
+  articles: PropTypes.arrayOf(PropTypes.object),
   selectedArticle: PropTypes.object,
   setSelectedArticle: PropTypes.func,
 };

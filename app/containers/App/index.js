@@ -9,19 +9,25 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
+import ThePage from 'containers/ThePage/Loadable';
+import { Header, Footer } from 'components';
+import { Helmet } from 'react-helmet';
 import GlobalStyle from '../../global-styles';
 
 export default function App() {
   return (
     <div>
+      <Helmet>
+        <title>Lukas Anderson</title>
+        <meta name="description" content="Lukas Anderson" />
+      </Helmet>
+      <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={ThePage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
       <GlobalStyle />
     </div>
   );

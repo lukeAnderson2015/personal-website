@@ -1,0 +1,58 @@
+/**
+ *
+ * Footer
+ *
+ */
+
+import React, { memo } from 'react';
+import styled from 'styled-components';
+import Img from 'components/Img';
+import reactIcon from '../../images/icons8-react-native-64.png';
+
+const Wrapper = styled.footer`
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+`;
+
+function Footer() {
+  return (
+    <Wrapper>
+      <section
+        style={{
+          marginRight: '30px',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <p>This project is licensed under the MIT license.</p>
+        <a href="https://icons8.com" target="_blank">
+          Icons By Icons8
+        </a>
+      </section>
+      <section>
+        <span>Built with love using </span>
+        <a href="https://reactjs.org" target="_blank">
+          React.js
+          <Img src={reactIcon} alt="icon-unavilable" />
+        </a>
+      </section>
+      <section>
+        <p>
+          Site Design, Implementation, Most* Photography, Music and Writing by
+          Lukas Anderson.
+        </p>
+        <br />
+        <p>Credit to Max Stoiber for the </p>{' '}
+        <a
+          href="https://github.com/react-boilerplate/react-boilerplate"
+          target="_blank"
+        >
+          React.js boilerplate project.
+        </a>
+      </section>
+    </Wrapper>
+  );
+}
+
+export default memo(Footer);

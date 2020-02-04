@@ -33,8 +33,8 @@ function PanelSection(props) {
 
 PanelSection.propTypes = {
   style: PropTypes.object,
-  id: PropTypes.number,
-  backgroundImage: PropTypes.object,
+  id: PropTypes.string,
+  backgroundImage: PropTypes.string,
   children: PropTypes.object,
 };
 
