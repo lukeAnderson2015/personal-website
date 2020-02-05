@@ -37,11 +37,7 @@ export default function ThePage() {
 
   return (
     <div>
-      <PanelSection
-        id="home"
-        backgroundImage={seattleFerry}
-        style={{ height: '100vh' }}
-      >
+      <PanelSection id="home" backgroundImage={seattleFerry}>
         <IntroBox>
           <CircularImg src={weddingLukePortrait} alt="no-image-found" />
           <H2Centered>
@@ -67,9 +63,7 @@ export default function ThePage() {
       </PanelSection>
 
       <PanelSectionHeader text="Music" id="music" />
-      <PanelSection backgroundImage={kauaiSunset}>
-        <div style={{ height: '100vh' }}>test</div>
-      </PanelSection>
+      <PanelSection backgroundImage={kauaiSunset} />
     </div>
   );
 }

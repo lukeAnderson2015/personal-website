@@ -9,9 +9,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledSlide = styled.div`
-  flex-shrink: 0;
-  max-width: 50%;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
   height: auto;
+
+  flex-shrink: 0;
   scroll-snap-align: start;
 `;
 
