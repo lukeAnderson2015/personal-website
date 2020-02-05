@@ -4,4 +4,3 @@
 - colorado photos
 - photo explorer (filters, etc)
 - async photo load
-- navigation buttons

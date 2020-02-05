@@ -1,31 +1,76 @@
-import React from 'react';
+/**
+ *
+ * Header
+ *
+ */
 
-import NavBar from './NavBar';
-import HeaderLink from './HeaderLink';
+import React, { memo } from 'react';
+import styled from 'styled-components';
+import Img from 'components/Img';
 
-function Header() {
+import linkedInIcon from '../../images/icons8-linkedin-64.png';
+import cameraIcon from '../../images/icons8-camera-64.png';
+import musicIcon from '../../images/icons8-music-64.png';
+import homeIcon from '../../images/icons8-home-page-64.png';
+import bookIcon from '../../images/icons8-open-book-64.png';
+
+const HeaderWrapper = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  width: 100vw;
+`;
+
+const NavBarWrapper = styled.div`
+  width: 300px;
+  margin-right: 35px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const NavBarItem = styled.a`
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+function buildNavItem(icon, title, id) {
   return (
-      <NavBar>
-        <div style={{fontSize: '28px', marginRight: 'auto'}}>Lukas Anderson</div>
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
-          <HeaderLink to="/" style={{display: 'flex', alignItems: 'center'}}>
-            <p>
-              Writings
-            </p>  
-          </HeaderLink>
-          <HeaderLink to="/travels" style={{display: 'flex', alignItems: 'center'}}>
-            <p>
-              Travels
-            </p>
-          </HeaderLink>
-          <HeaderLink to="/about" style={{display: 'flex', alignItems: 'center'}}>
-            <p>
-              About
-            </p>
-          </HeaderLink>
-        </div>
-      </NavBar>
+    <NavBarItem href={`#${id}`} title={`Go to ${title}`}>
+      <Img src={icon} alt="icon-unavailable" />
+    </NavBarItem>
   );
 }
 
-export default Header;
+function Header() {
+  return (
+    <HeaderWrapper>
+      <a
+        href="https://www.linkedin.com/in/lukas-anderson-4a786b42"
+        target="_blank"
+        title="LinkedIn"
+      >
+        <Img src={linkedInIcon} alt="icon-unavailable" />
+      </a>
+      <NavBarWrapper>
+        {buildNavItem(homeIcon, 'Home', 'home')}
+        {buildNavItem(
+          cameraIcon,
+          'Travel & Photography',
+          'travel-and-photography',
+        )}
+        {buildNavItem(bookIcon, 'Writing', 'writing')}
+        {buildNavItem(musicIcon, 'Music', 'music')}
+      </NavBarWrapper>
+    </HeaderWrapper>
+  );
+}
+
+export default memo(Header);

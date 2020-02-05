@@ -3,9 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    line-height: 1.5;
   }
 
   body {
@@ -17,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    background-color: #efefef;
-    min-height: 100vh;
+    background-color: #fafafa;
+    min-height: 100%;
     min-width: 100%;
   }
 
