@@ -8,6 +8,7 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import ThePage from 'containers/ThePage/Loadable';
@@ -15,9 +16,16 @@ import { Header, Footer } from 'components';
 import { Helmet } from 'react-helmet';
 import GlobalStyle from '../../global-styles';
 
+const AppWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+`;
+
 export default function App() {
   return (
-    <div>
+    <AppWrapper>
       <Helmet>
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
@@ -29,6 +37,6 @@ export default function App() {
       </Switch>
       <Footer />
       <GlobalStyle />
-    </div>
+    </AppWrapper>
   );
 }

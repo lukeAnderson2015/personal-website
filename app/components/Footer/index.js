@@ -12,7 +12,13 @@ import reactIcon from '../../images/icons8-react-native-64.png';
 const Wrapper = styled.footer`
   display: flex;
   justify-content: space-around;
-  padding: 1em;
+  align-items: center;
+  padding: 15px;
+
+  p,
+  a {
+    margin: 3px;
+  }
 `;
 
 function Footer() {
@@ -20,7 +26,6 @@ function Footer() {
     <Wrapper>
       <section
         style={{
-          marginRight: '30px',
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -42,14 +47,15 @@ function Footer() {
           Site Design, Implementation, Most* Photography, Music and Writing by
           Lukas Anderson.
         </p>
-        <br />
-        <p>Credit to Max Stoiber for the </p>{' '}
-        <a
-          href="https://github.com/react-boilerplate/react-boilerplate"
-          target="_blank"
-        >
-          React.js boilerplate project.
-        </a>
+        <p>
+          Credit to Max Stoiber for the{' '}
+          <a
+            href="https://github.com/react-boilerplate/react-boilerplate"
+            target="_blank"
+          >
+            React.js boilerplate project.
+          </a>
+        </p>
       </section>
     </Wrapper>
   );

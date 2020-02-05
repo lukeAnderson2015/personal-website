@@ -25,7 +25,6 @@ const HeaderWrapper = styled.div`
 const NavBarWrapper = styled.div`
   width: 300px;
   margin-right: 35px;
-  padding: 7px;
   display: flex;
   justify-content: space-between;
 `;
