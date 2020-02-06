@@ -1,4 +1,2 @@
-- auto slide photos?
-- Belize photos
-- colorado photos
 - async photo load
+- writing pieces
