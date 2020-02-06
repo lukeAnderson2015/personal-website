@@ -62,8 +62,8 @@ export default function ThePage() {
         <ArticleViewer />
       </PanelSection>
 
-      <PanelSectionHeader text="Music" id="music" />
-      <PanelSection backgroundImage={kauaiSunset} />
+      {/* <PanelSectionHeader text="Music" id="music" />
+      <PanelSection backgroundImage={kauaiSunset} /> */}
     </div>
   );
 }

@@ -13,7 +13,6 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   background-size: cover;
-  background-color: lightgrey;
   max-width: 100%;
   height: 100vh;
 `;
