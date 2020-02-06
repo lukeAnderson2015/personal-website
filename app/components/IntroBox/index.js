@@ -9,9 +9,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  margin-left: 1.5%;
+  display: flex;
+  flex-flow: column;
   padding: 20px;
   color: white;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 `;
 
 function IntroBox(props) {

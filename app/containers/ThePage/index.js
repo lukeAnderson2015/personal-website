@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import styled from 'styled-components';
 import ShortId from 'shortid';
 import {
   Slide,
@@ -21,8 +22,12 @@ import {
   weddingLukePortrait,
   seattleFerry,
   phuketSnorkel,
-  kauaiSunset,
 } from '../../images/all_images';
+
+const IntroSubHeader = styled.p`
+  font-style: italic;
+  margin: 0;
+`;
 
 export default function ThePage() {
   const slides = pictures.map(p => (
@@ -43,9 +48,7 @@ export default function ThePage() {
           <H2Centered>
             <span>Lukas Anderson</span>
           </H2Centered>
-          <p style={{ textAlign: 'center', fontStyle: 'italic' }}>
-            Explorer. Creator. Developer.
-          </p>
+          <IntroSubHeader>Explorer. Creator. Developer.</IntroSubHeader>
         </IntroBox>
       </PanelSection>
 

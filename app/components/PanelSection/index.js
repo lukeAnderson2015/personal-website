@@ -14,7 +14,7 @@ const Section = styled.section`
   justify-content: center;
   background-size: cover;
   max-width: 100%;
-  height: 100vh;
+  max-height: 100vh;
 `;
 
 function PanelSection(props) {

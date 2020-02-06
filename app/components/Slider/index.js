@@ -24,7 +24,7 @@ const StyledSlider = styled.div`
 const sharedButtonStyle = css`
   height: auto;
   width: auto;
-  top: 160%;
+  top: 150vh;
   position: absolute;
 
   z-index: 99;
@@ -49,7 +49,7 @@ function Slider(props) {
   const sliderWrapperRef = useRef(null);
 
   const { width } = useWindowDimensions();
-  const slideSize = width; // 75% from <Slide/> width: 75%
+  const slideSize = width;
   const scrollBehavior = 'smooth';
 
   return (

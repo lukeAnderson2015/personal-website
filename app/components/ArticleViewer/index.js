@@ -17,7 +17,7 @@ const MainDiv = styled.div`
   align-items: center;
   flex-flow: column;
   align-content: space-evenly;
-  padding: 5vh 0px 0px 0px;
+  padding: 3vh 0px 0px 0px;
   height: 100vh;
   width: 100vw;
 `;

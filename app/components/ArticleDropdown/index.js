@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import Select from 'react-select';
 
 const Title = styled.h4`
-  width: 55vw;
+  width: 100%;
   margin: 0px;
   text-align: center;
   overflow: hidden;
@@ -50,27 +50,27 @@ const selectStyles = {
   }),
   valueContainer: provided => ({
     ...provided,
+    display: 'flex',
+    justifyContent: 'center',
     width: '300px',
     height: '50px',
   }),
   indicatorsContainer: provided => ({
     ...provided,
-    width: '75px',
   }),
   dropdownIndicator: provided => ({
     ...provided,
-    marginLeft: '20px',
     color: 'white',
   }),
   container: provided => ({
     ...provided,
-    width: '65vw',
-    height: '100px',
+    width: '80vw',
+    height: '10vh',
   }),
   control: provided => ({
     ...provided,
     border: '0px',
-    height: '100px',
+    height: '10vh',
     background: 'rgb(220, 220, 220, 0.6)',
   }),
   menu: provided => ({
@@ -83,7 +83,6 @@ const selectStyles = {
   }),
   singleValue: provided => ({
     ...provided,
-    padding: '0px 0px 0px 50px',
     fontSize: '1.1em',
   }),
 };
