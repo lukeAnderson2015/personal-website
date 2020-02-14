@@ -1,4 +1,3 @@
-
 // images for travel and photography slider
 import spiralPlant from './spiral_plant.jpg';
 import stickyWaterfall from './sticky_waterfall.jpg';
@@ -19,15 +18,14 @@ import galapagosCrab from './galapagos_crab.jpg';
 import huacachinaSkiing from './huacachina_skiing.jpg';
 import huacachinaView from './huacachina_view.jpg';
 import machuPicchu from './machu_picchu.jpg';
-import marinaBaySandsPool from './marina_bay_sands_pool.jpg';
 import marinaBaySandsView from './marina_bay_sands_view.jpg';
 import postOfficeBay from './post_office_bay.jpg';
 import rainbowMountain from './rainbow_mountain.jpg';
 import eatingScorpion from './scorpion_eating.jpg';
 import singaporeDragonfly from './singapore_dragonfly.jpg';
 import thailandMoped from './thailand_moped.jpg';
-import wat_1 from './wat_phrathat_doi_suthep.jpg';
-import wat_2 from './wat_phrathat_doi_suthep_2.jpg';
+import wat1 from './wat_phrathat_doi_suthep.jpg';
+import wat2 from './wat_phrathat_doi_suthep_2.jpg';
 import babyElephant from './baby_elephant.jpg';
 import elephantProfile from './elephant_profile.jpg';
 import impala from './impala.jpg';
@@ -42,45 +40,40 @@ import kauaiSunset from './kauai_sunset.jpg';
 import weddingLukePortrait from './wedding_luke.jpg';
 
 const pictures = [
-    quilotoaFlower,
-    cuencaGrain,
-    ecuadorRedPlant,
-    spiralPlant,
-    // bigBuddha,
-    costaRicaHermit,
-    cuscoHummingbird,
-    ecuadorOrangeFlower,
-    galapagosCrab,
-    amazonPirhana,
-    singaporeDragonfly,
-    stickyWaterfall,
-    ecuadorFireworkFlower,
-    // eatingCrickets,
-    // eatingScorpion,
-    // ecuadorShrooms,
-    divingSelfie,
-    huacachinaSkiing,
-    huacachinaView,
-    postOfficeBay,
-    // marinaBaySandsView,
-    rainbowMountain,
-    machuPicchu,
-    thailandMoped,
-    wat_1,
-    wat_2,
-    ecuadorianCouncil,
-    babyElephant,
-    elephantProfile,
-    impala,
-    lionKing,
-    lionProfile,
-    lionYawn,
+  quilotoaFlower,
+  cuencaGrain,
+  ecuadorRedPlant,
+  spiralPlant,
+  costaRicaHermit,
+  cuscoHummingbird,
+  ecuadorOrangeFlower,
+  galapagosCrab,
+  amazonPirhana,
+  singaporeDragonfly,
+  bigBuddha,
+  stickyWaterfall,
+  ecuadorFireworkFlower,
+  babyElephant,
+  elephantProfile,
+  impala,
+  lionKing,
+  lionProfile,
+  lionYawn,
+  eatingCrickets,
+  eatingScorpion,
+  ecuadorShrooms,
+  divingSelfie,
+  huacachinaSkiing,
+  huacachinaView,
+  postOfficeBay,
+  marinaBaySandsView,
+  rainbowMountain,
+  machuPicchu,
+  thailandMoped,
+  wat1,
+  wat2,
+  ecuadorianCouncil,
+  kauaiSunset,
 ];
 
-export {
-    pictures,
-    seattleFerry,
-    kauaiSunset,
-    weddingLukePortrait,
-    phuketSnorkel
-}
+export { pictures, seattleFerry, weddingLukePortrait, phuketSnorkel };

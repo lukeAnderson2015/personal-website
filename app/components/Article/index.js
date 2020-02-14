@@ -10,11 +10,13 @@ import PropTypes from 'prop-types';
 import ShortId from 'shortid';
 
 const WrapperDiv = styled.div`
-  width: 80vw;
-  max-height: 85vh;
+  width: 70vw;
+  max-height: 84vh;
   color: white;
-  padding: 0px 0px 10px 15px;
+  padding: 10px 0px 10px 15px;
   border-radius: 5px;
+  background-color: rgb(220, 220, 220, 0.3);
+  margin-top: 10px;
 `;
 
 const Text = styled.div`

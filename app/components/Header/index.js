@@ -20,11 +20,12 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   height: 64px;
   width: 100vw;
+  padding: 10px 15px 0 10px;
 `;
 
 const NavBarWrapper = styled.div`
-  width: 230px;
-  margin-right: 35px;
+  width: 200px;
+  margin-right: 15px;
   display: flex;
   justify-content: space-between;
 `;

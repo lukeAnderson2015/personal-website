@@ -29,7 +29,7 @@ const OptionLabelContainer = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  color: black;
+  color: teal;
 `;
 
 const selectStyles = {
@@ -64,14 +64,14 @@ const selectStyles = {
   }),
   container: provided => ({
     ...provided,
-    width: '80vw',
+    width: '70vw',
     height: '10vh',
   }),
   control: provided => ({
     ...provided,
     border: '0px',
     height: '10vh',
-    background: 'rgb(220, 220, 220, 0.6)',
+    background: 'rgb(220, 220, 220, 0.4)',
   }),
   menu: provided => ({
     ...provided,
