@@ -1,20 +1,19 @@
 import Header from './Header';
-import Footer from './Footer';
-import Img from './Img';
-import Slide from './Slide';
-import Slider from './Slider';
+import Footer from './Footer/Loadable';
+import Img from './Img/Loadable';
+import Slider from './Slider/Loadable';
 import PanelSection from './PanelSection';
 import PanelSectionHeader from './PanelSectionHeader';
 import IntroBox from './IntroBox';
 import CircularImg from './CircularImg';
 import H2Centered from './H2Centered';
-import ArticleViewer from './ArticleViewer';
+import ArticleViewer from './ArticleViewer/Loadable';
+import ReactPractice from './ReactPractice/Loadable';
 
 export {
   Header,
   Footer,
   Img,
-  Slide,
   Slider,
   PanelSectionHeader,
   PanelSection,
@@ -22,4 +21,5 @@ export {
   CircularImg,
   H2Centered,
   ArticleViewer,
+  ReactPractice,
 };
