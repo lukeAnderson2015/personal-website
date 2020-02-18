@@ -36,7 +36,7 @@ const selectStyles = {
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isSelected
-      ? 'rgb(55, 85, 122)'
+      ? 'rgb(185, 185, 185)'
       : 'rgb(220, 220, 220)',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -45,7 +45,7 @@ const selectStyles = {
     borderBottom: 'solid 1px grey',
     ':hover': {
       cursor: 'pointer',
-      backgroundColor: 'rgb(75, 130, 160)',
+      backgroundColor: 'rgb(180, 240, 240)',
     },
   }),
   valueContainer: provided => ({
