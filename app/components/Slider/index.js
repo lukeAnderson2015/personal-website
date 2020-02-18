@@ -10,8 +10,8 @@ import styled, { css } from 'styled-components';
 import arrowRight from 'images/icons8-chevron-right-64.png';
 import arrowLeft from 'images/icons8-chevron-left-64.png';
 import useWindowDimensions from 'utils/windowDimensions';
-import Img from 'components/Img';
-import Slide from '../Slide/Loadable';
+import Img from 'components';
+import Slide from '../Slide';
 import pictures from '../../images/all_images';
 
 const StyledSlider = styled.div`
