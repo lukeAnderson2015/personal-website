@@ -5,22 +5,20 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import ShortId from 'shortid';
 import {
-  Slide,
-  Slider,
   PanelSection,
-  Img,
   H2Centered,
   IntroBox,
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
+  ReactPractice,
+  Slider,
 } from 'components';
 import {
-  pictures,
   weddingLukePortrait,
   seattleFerry,
+  kauaiSunset,
   phuketSnorkel,
 } from '../../images/all_images';
 
@@ -30,16 +28,6 @@ const IntroSubHeader = styled.p`
 `;
 
 export default function ThePage() {
-  const slides = pictures.map(p => (
-    <Slide key={ShortId.generate()}>
-      <Img
-        src={p}
-        alt="image-unavailable"
-        style={{ maxHeight: '100%', maxWidth: '100%' }}
-      />
-    </Slide>
-  ));
-
   return (
     <div>
       <PanelSection id="home" backgroundImage={seattleFerry}>
@@ -57,12 +45,17 @@ export default function ThePage() {
         id="travel-and-photography"
       />
       <PanelSection>
-        <Slider>{slides}</Slider>
+        <Slider />
       </PanelSection>
 
       <PanelSectionHeader text="Writing" id="writing" />
       <PanelSection backgroundImage={phuketSnorkel}>
         <ArticleViewer />
+      </PanelSection>
+
+      <PanelSectionHeader text="React Practice" id="react-practice" />
+      <PanelSection backgroundImage={kauaiSunset}>
+        <ReactPractice />
       </PanelSection>
 
       {/* <PanelSectionHeader text="Music" id="music" />

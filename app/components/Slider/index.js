@@ -5,12 +5,14 @@
  */
 
 import React, { memo, useRef } from 'react';
-import PropTypes from 'prop-types';
+import ShortId from 'shortid';
 import styled, { css } from 'styled-components';
-import Img from 'components/Img';
 import arrowRight from 'images/icons8-chevron-right-64.png';
 import arrowLeft from 'images/icons8-chevron-left-64.png';
 import useWindowDimensions from 'utils/windowDimensions';
+import { Img } from 'components';
+import Slide from '../Slide/Loadable';
+import pictures from '../../images/all_images';
 
 const StyledSlider = styled.div`
     display: flex;
@@ -44,7 +46,7 @@ const LeftButton = styled.span`
   left: 10px;
 `;
 
-function Slider(props) {
+function Slider() {
   const sliderRef = useRef(null);
   const sliderWrapperRef = useRef(null);
 
@@ -52,10 +54,20 @@ function Slider(props) {
   const slideSize = width;
   const scrollBehavior = 'smooth';
 
+  const slides = pictures.map(p => (
+    <Slide key={ShortId.generate()}>
+      <Img
+        src={p}
+        alt="image-unavailable"
+        style={{ maxHeight: '100%', maxWidth: '100%' }}
+      />
+    </Slide>
+  ));
+
   return (
     <div ref={sliderWrapperRef}>
       <StyledSlider ref={sliderRef} id="slider">
-        {props.children}
+        {slides}
       </StyledSlider>
       <LeftButton
         onClick={() =>
@@ -90,9 +102,5 @@ function Slider(props) {
     </div>
   );
 }
-
-Slider.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
-};
 
 export default memo(Slider);
