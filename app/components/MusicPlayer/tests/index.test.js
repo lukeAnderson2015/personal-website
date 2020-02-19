@@ -1,6 +1,6 @@
 /**
  *
- * Tests for ReactPractice
+ * Tests for MusicPlayer
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -10,12 +10,12 @@ import React from 'react';
 import { render } from 'react-testing-library';
 // import 'jest-dom/extend-expect'; // add some helpful assertions
 
-import ReactPractice from '../index';
+import MusicPlayer from '../index';
 
-describe('<ReactPractice />', () => {
+describe('<MusicPlayer />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error');
-    render(<ReactPractice />);
+    render(<MusicPlayer />);
     expect(spy).not.toHaveBeenCalled();
   });
 
@@ -31,7 +31,7 @@ describe('<ReactPractice />', () => {
   it.skip('Should render and match the snapshot', () => {
     const {
       container: { firstChild },
-    } = render(<ReactPractice />);
+    } = render(<MusicPlayer />);
     expect(firstChild).toMatchSnapshot();
   });
 });

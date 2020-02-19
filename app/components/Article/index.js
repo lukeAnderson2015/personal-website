@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import ShortId from 'shortid';
 
 const WrapperDiv = styled.div`
-  width: 70vw;
+  width: 68vw;
   max-height: 84vh;
   color: white;
   padding: 10px 0px 10px 15px;

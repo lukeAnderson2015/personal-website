@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for ReactPractice
+ * Asynchronously loads the component for MusicPlayer
  *
  */
 

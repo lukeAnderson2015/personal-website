@@ -8,7 +8,7 @@ import IntroBox from './IntroBox';
 import CircularImg from './CircularImg';
 import H2Centered from './H2Centered';
 import ArticleViewer from './ArticleViewer/Loadable';
-import ReactPractice from './ReactPractice/Loadable';
+import MusicPlayer from './MusicPlayer/Loadable';
 
 export {
   Header,
@@ -21,5 +21,5 @@ export {
   CircularImg,
   H2Centered,
   ArticleViewer,
-  ReactPractice,
+  MusicPlayer,
 };
