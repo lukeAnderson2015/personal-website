@@ -13,13 +13,16 @@ import Player from '../Player/Loadable';
 import songs from '../../songs';
 
 const SongListWrapper = styled.div`
-  width: 60vw;
+  width: 40vw;
   height: 90vh;
 
   background-color: rgb(220, 220, 220, 0.5);
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   height: 100vh;
   padding-top: 5vh;
 `;
@@ -31,12 +34,12 @@ function MusicPlayer() {
   ));
 
   return (
-    <Wrapper>
-      <Provider value={selectedSong}>
+    <Provider value={selectedSong}>
+      <Wrapper>
         <Player songs={songs} />
         <SongListWrapper>{songList}</SongListWrapper>
-      </Provider>
-    </Wrapper>
+      </Wrapper>
+    </Provider>
   );
 }
 

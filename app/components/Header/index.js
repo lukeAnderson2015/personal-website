@@ -10,7 +10,7 @@ import Img from 'components/Img';
 
 import linkedInIcon from '../../images/icons8-linkedin-64.png';
 import cameraIcon from '../../images/icons8-camera-64.png';
-// import musicIcon from '../../images/icons8-music-64.png';
+import musicIcon from '../../images/icons8-music-64.png';
 import homeIcon from '../../images/icons8-home-page-64.png';
 import bookIcon from '../../images/icons8-open-book-64.png';
 
@@ -24,8 +24,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const NavBarWrapper = styled.div`
-  width: 200px;
-  margin-right: 15px;
+  width: 250px;
   display: flex;
   justify-content: space-between;
 `;
@@ -68,7 +67,7 @@ function Header() {
           'travel-and-photography',
         )}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
-        {/* {buildNavItem(musicIcon, 'Music', 'music')} */}
+        {buildNavItem(musicIcon, 'Music', 'music')}
       </NavBarWrapper>
     </HeaderWrapper>
   );

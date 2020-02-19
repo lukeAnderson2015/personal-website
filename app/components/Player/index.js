@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { Consumer } from 'utils/context';
 
 const Div = styled.div`
-  width: 25vw;
+  width: 20vw;
   height: 15vh;
 `;
 

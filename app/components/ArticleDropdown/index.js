@@ -64,7 +64,7 @@ const selectStyles = {
   }),
   container: provided => ({
     ...provided,
-    width: '70vw',
+    width: '68vw',
     height: '10vh',
   }),
   control: provided => ({
