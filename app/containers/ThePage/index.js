@@ -12,7 +12,7 @@ import {
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
-  ReactPractice,
+  MusicPlayer,
   Slider,
 } from 'components';
 import {
@@ -53,9 +53,9 @@ export default function ThePage() {
         <ArticleViewer />
       </PanelSection>
 
-      <PanelSectionHeader text="React Practice" id="react-practice" />
+      <PanelSectionHeader text="Music" id="music" />
       <PanelSection backgroundImage={kauaiSunset}>
-        <ReactPractice />
+        <MusicPlayer />
       </PanelSection>
 
       {/* <PanelSectionHeader text="Music" id="music" />
