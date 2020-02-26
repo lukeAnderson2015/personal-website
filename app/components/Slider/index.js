@@ -26,7 +26,7 @@ const StyledSlider = styled.div`
 const sharedButtonStyle = css`
   height: auto;
   width: auto;
-  top: 150vh;
+  top: 170vh;
   position: absolute;
 
   z-index: 99;

@@ -12,13 +12,13 @@ import {
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
-  MusicPlayer,
+  // MusicPlayer,
   Slider,
 } from 'components';
 import {
   weddingLukePortrait,
   seattleFerry,
-  kauaiSunset,
+  // kauaiSunset,
   phuketSnorkel,
 } from '../../images/all_images';
 
@@ -53,13 +53,10 @@ export default function ThePage() {
         <ArticleViewer />
       </PanelSection>
 
-      <PanelSectionHeader text="Music" id="music" />
+      {/* <PanelSectionHeader text="Music" id="music" />
       <PanelSection backgroundImage={kauaiSunset}>
         <MusicPlayer />
-      </PanelSection>
-
-      {/* <PanelSectionHeader text="Music" id="music" />
-      <PanelSection backgroundImage={kauaiSunset} /> */}
+      </PanelSection> */}
     </div>
   );
 }
