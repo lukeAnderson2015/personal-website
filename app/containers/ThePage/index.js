@@ -27,7 +27,6 @@ const IntroSubHeader = styled.p`
 `;
 
 export default function ThePage() {
-
   return (
     <div>
       <PanelSection id="home" backgroundImage={seattleFerry}>

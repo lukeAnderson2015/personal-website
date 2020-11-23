@@ -31,7 +31,7 @@ const NavBarItemWrapper = styled.div`
   border: solid white 1px;
   border-radius: 5px;
 
-  padding: .25em;
+  padding: 0.25em;
 `;
 
 const NavBarItem = styled.a`
@@ -40,7 +40,7 @@ const NavBarItem = styled.a`
   justify-content: center;
 
   margin: 0 1em 0 1em;
-  
+
   text-decoration: none;
   :hover {
     cursor: pointer;

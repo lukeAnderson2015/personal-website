@@ -21,7 +21,7 @@ const AppWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  
+
   background-color: black;
   color: white;
 `;

@@ -8,10 +8,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ShortId from 'shortid';
-import {
-  Photo,
-  Img,
-} from '../';
+import { Photo, Img } from '..';
 
 const StyledPhotoContainer = styled.div`
     display: flex;

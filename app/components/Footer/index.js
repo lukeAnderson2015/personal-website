@@ -44,8 +44,8 @@ function Footer() {
       </section>
       <section>
         <p>
-          Site Design, Implementation, Most* Photography and Writing by
-          Lukas Anderson.
+          Site Design, Implementation, Most* Photography and Writing by Lukas
+          Anderson.
         </p>
         <p>
           Credit to Max Stoiber for the{' '}

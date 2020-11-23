@@ -14,7 +14,7 @@ const SizedPhoto = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2px;
-  
+
   &:hover {
     cursor: pointer;
     border: solid 2px white;
@@ -36,11 +36,11 @@ const modalStyles = {
     transform: 'translate(-50%, -50%)',
     maxWidth: '50%',
     maxHeight: '50%',
-  }
+  },
 };
 
 function Photo(props) {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   return (
     <SizedPhoto onClick={() => setModalIsOpen(true)}>
