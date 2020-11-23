@@ -12,11 +12,12 @@ const Header = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5vh;
+
+  font-size: 2em;
   font-family: 'Jim Nightshade', italic;
-  color: rgb(115, 115, 115);
-  height: 5vh;
-  width: auto;
+  font-weight: normal;
+  height: 3em;
+  margin: 0;
 `;
 
 function PanelSectionHeader(props) {

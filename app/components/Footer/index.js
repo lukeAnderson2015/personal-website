@@ -7,7 +7,7 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
-import reactIcon from '../../images/icons8-react-native-64.png';
+import reactIcon from '../../images/icons8-react-white-80.png';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -44,7 +44,7 @@ function Footer() {
       </section>
       <section>
         <p>
-          Site Design, Implementation, Most* Photography, Music and Writing by
+          Site Design, Implementation, Most* Photography and Writing by
           Lukas Anderson.
         </p>
         <p>

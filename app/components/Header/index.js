@@ -8,34 +8,39 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
 
-import linkedInIcon from '../../images/icons8-linkedin-64.png';
-import cameraIcon from '../../images/icons8-camera-64.png';
-// import musicIcon from '../../images/icons8-music-64.png';
-import homeIcon from '../../images/icons8-home-page-64.png';
-import bookIcon from '../../images/icons8-open-book-64.png';
+import linkedInIcon from '../../images/icons8-linkedin-white-50.png';
+import cameraIcon from '../../images/icons8-camera-white-50.png';
+import homeIcon from '../../images/icons8-home-white-50.png';
+import bookIcon from '../../images/icons8-open-book-white-50.png';
 
 const HeaderWrapper = styled.div`
   position: fixed;
   display: flex;
   justify-content: space-between;
-  height: 64px;
-  width: 100vw;
-  padding: 10px 15px 0 10px;
+
+  height: 6em;
+  width: 100%;
+  padding: 1em 2em 1em 2em;
 `;
 
-const NavBarWrapper = styled.div`
-  width: 200px;
-  margin-right: 15px;
+const NavBarItemWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: solid white 1px;
+  border-radius: 5px;
+
+  padding: .25em;
 `;
 
 const NavBarItem = styled.a`
-  height: 60px;
-  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 0 1em 0 1em;
+  
   text-decoration: none;
   :hover {
     cursor: pointer;
@@ -53,14 +58,16 @@ function buildNavItem(icon, title, id) {
 function Header() {
   return (
     <HeaderWrapper>
-      <a
-        href="https://www.linkedin.com/in/lukas-anderson-4a786b42"
-        target="_blank"
-        title="LinkedIn"
-      >
-        <Img src={linkedInIcon} alt="icon-unavailable" />
-      </a>
-      <NavBarWrapper>
+      <NavBarItemWrapper>
+        <a
+          href="https://www.linkedin.com/in/lukas-anderson-4a786b42"
+          target="_blank"
+          title="LinkedIn - Lukas Anderson"
+        >
+          <Img src={linkedInIcon} alt="icon-unavailable" />
+        </a>
+      </NavBarItemWrapper>
+      <NavBarItemWrapper>
         {buildNavItem(homeIcon, 'Home', 'home')}
         {buildNavItem(
           cameraIcon,
@@ -69,7 +76,7 @@ function Header() {
         )}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
         {/* {buildNavItem(musicIcon, 'Music', 'music')} */}
-      </NavBarWrapper>
+      </NavBarItemWrapper>
     </HeaderWrapper>
   );
 }
