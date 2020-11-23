@@ -13,7 +13,7 @@ const SizedPhoto = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
@@ -40,8 +40,8 @@ const modalStyles = {
     padding: '2em',
   },
   overlay: {
-    background: 'black'
-  }
+    background: 'black',
+  },
 };
 
 function Photo(props) {

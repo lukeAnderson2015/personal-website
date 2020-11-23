@@ -22,7 +22,7 @@ const MainDiv = styled.div`
 `;
 
 const ArticleViewer = () => {
-  const [selectedArticle, setSelectedArticle] = useState(articles[0])
+  const [selectedArticle, setSelectedArticle] = useState(articles[0]);
 
   return (
     <MainDiv>
@@ -36,7 +36,7 @@ const ArticleViewer = () => {
       <Article article={selectedArticle} />
     </MainDiv>
   );
-}
+};
 
 ArticleViewer.propTypes = {};
 

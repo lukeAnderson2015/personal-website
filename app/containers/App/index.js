@@ -23,7 +23,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
   font-size: 18px;
 
-  @media 768px { 
+  @media 768px {
     font-size: 18px;
   }
 
