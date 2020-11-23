@@ -29,24 +29,25 @@ const OptionLabelContainer = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  color: teal;
+  color: white;
 `;
 
 const selectStyles = {
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isSelected
-      ? 'rgb(55, 85, 122)'
-      : 'rgb(220, 220, 220)',
+      ? 'rgb(0, 0, 0, 0.9)'
+      : 'rgb(0, 0, 0, 0.7)',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textAlign: 'center',
-    borderBottom: 'solid 1px grey',
+    borderBottom: 'solid 1px black',
     ':hover': {
       cursor: 'pointer',
-      backgroundColor: 'rgb(75, 130, 160)',
+      backgroundColor: 'rgb(0, 128, 128, 0.8)',
     },
+    color: 'black',
   }),
   valueContainer: provided => ({
     ...provided,
@@ -55,13 +56,6 @@ const selectStyles = {
     width: '300px',
     height: '50px',
   }),
-  indicatorsContainer: provided => ({
-    ...provided,
-  }),
-  dropdownIndicator: provided => ({
-    ...provided,
-    color: 'white',
-  }),
   container: provided => ({
     ...provided,
     width: '70vw',
@@ -69,9 +63,9 @@ const selectStyles = {
   }),
   control: provided => ({
     ...provided,
-    border: '0px',
+    border: '1px solid teal',
     height: '10vh',
-    background: 'rgb(220, 220, 220, 0.4)',
+    background: 'rgb(220, 220, 220, 0.1)',
   }),
   menu: provided => ({
     ...provided,

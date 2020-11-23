@@ -8,10 +8,10 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
 
-import linkedInIcon from '../../images/icons8-linkedin-white-50.png';
-import cameraIcon from '../../images/icons8-camera-white-50.png';
-import homeIcon from '../../images/icons8-home-white-50.png';
-import bookIcon from '../../images/icons8-open-book-white-50.png';
+import linkedInIcon from '../../images/linkedInIcon.svg';
+import cameraIcon from '../../images/cameraIcon.svg';
+import homeIcon from '../../images/homeIcon.svg';
+import bookIcon from '../../images/bookIcon.svg';
 
 const HeaderWrapper = styled.div`
   position: fixed;
@@ -25,13 +25,12 @@ const HeaderWrapper = styled.div`
 
 const NavBarItemWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   border: solid white 1px;
   border-radius: 5px;
-
-  padding: 0.25em;
+  min-width: 4em;
 `;
 
 const NavBarItem = styled.a`

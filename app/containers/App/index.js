@@ -21,6 +21,11 @@ const AppWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
+  font-size: 18px;
+
+  @media 768px { 
+    font-size: 18px;
+  }
 
   background-color: black;
   color: white;

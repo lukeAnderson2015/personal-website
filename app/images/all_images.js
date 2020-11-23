@@ -7,7 +7,6 @@ import ecuadorianCouncil from './ecuadorian_council.jpg';
 import ecuadorFireworkFlower from './ecuador_firework_flower.jpg';
 import amazonPirhana from './amazon_pirhana.jpg';
 import quilotoaFlower from './quilotoa_flower.jpg';
-import bigBuddha from './big_buddha.jpg';
 import costaRicaHermit from './costa_rica_hermit.jpg';
 import cuscoHummingbird from './cusco_hummingbird.jpg';
 import eatingCrickets from './eating_crickets.jpg';
@@ -18,14 +17,11 @@ import galapagosCrab from './galapagos_crab.jpg';
 import huacachinaSkiing from './huacachina_skiing.jpg';
 import huacachinaView from './huacachina_view.jpg';
 import machuPicchu from './machu_picchu.jpg';
-import marinaBaySandsView from './marina_bay_sands_view.jpg';
 import postOfficeBay from './post_office_bay.jpg';
 import rainbowMountain from './rainbow_mountain.jpg';
-import eatingScorpion from './scorpion_eating.jpg';
 import singaporeDragonfly from './singapore_dragonfly.jpg';
 import thailandMoped from './thailand_moped.jpg';
-import wat1 from './wat_phrathat_doi_suthep.jpg';
-import wat2 from './wat_phrathat_doi_suthep_2.jpg';
+import wat2 from './wat_phrathat_doi_suthep.jpg';
 import babyElephant from './baby_elephant.jpg';
 import elephantProfile from './elephant_profile.jpg';
 import impala from './impala.jpg';
@@ -41,16 +37,22 @@ import weddingLukePortrait from './wedding_luke.jpg';
 
 const pictures = [
   quilotoaFlower,
-  cuencaGrain,
   ecuadorRedPlant,
+  cuencaGrain,
+  ecuadorFireworkFlower,
   spiralPlant,
   costaRicaHermit,
-  cuscoHummingbird,
   ecuadorOrangeFlower,
+  cuscoHummingbird,
   galapagosCrab,
   amazonPirhana,
   singaporeDragonfly,
-  ecuadorFireworkFlower,
+  wat2,
+  ecuadorShrooms,
+  ecuadorianCouncil,
+  eatingCrickets,
+  kauaiSunset,
+  huacachinaSkiing,
   babyElephant,
   elephantProfile,
   impala,
@@ -59,20 +61,11 @@ const pictures = [
   lionYawn,
   postOfficeBay,
   huacachinaView,
-  kauaiSunset,
-  eatingCrickets,
-  eatingScorpion,
-  ecuadorShrooms,
-  marinaBaySandsView,
   stickyWaterfall,
   divingSelfie,
-  huacachinaSkiing,
   rainbowMountain,
   machuPicchu,
   thailandMoped,
-  wat1,
-  wat2,
-  // ecuadorianCouncil,
 ];
 
 export { pictures, seattleFerry, weddingLukePortrait, phuketSnorkel };

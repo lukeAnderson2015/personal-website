@@ -48,7 +48,7 @@ export default function ThePage() {
       </PanelSection>
 
       <PanelSectionHeader text="Writing" id="writing" />
-      <PanelSection backgroundImage={phuketSnorkel}>
+      <PanelSection>
         <ArticleViewer />
       </PanelSection>
 

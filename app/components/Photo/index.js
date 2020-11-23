@@ -13,16 +13,17 @@ const SizedPhoto = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+  transition: all .2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    border: solid 2px white;
+    border: solid 3px white;
+    z-index: 9999999;
+    transform: scale(1.5);
   }
 
   margin: 1em;
-
-  width: 20em;
+  max-width: 20em;
   height: 15em;
 `;
 
@@ -34,20 +35,25 @@ const modalStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    maxWidth: '50%',
-    maxHeight: '50%',
+    width: '50%',
+    background: 'black',
+    padding: '2em',
   },
+  overlay: {
+    background: 'black'
+  }
 };
 
 function Photo(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const toggleModal = () => setModalIsOpen(!modalIsOpen);
 
   return (
-    <SizedPhoto onClick={() => setModalIsOpen(true)}>
+    <SizedPhoto onClick={toggleModal}>
       {props.children}
       <Modal
         isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
+        onRequestClose={toggleModal}
         style={modalStyles}
       >
         {props.children}

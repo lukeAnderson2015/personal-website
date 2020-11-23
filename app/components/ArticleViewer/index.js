@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 
 import Article from 'components/Article';
@@ -17,34 +17,25 @@ const MainDiv = styled.div`
   align-items: center;
   flex-flow: column;
   align-content: space-evenly;
-  padding: 3vh 0px 0px 0px;
   height: 100vh;
   width: 100vw;
 `;
 
-class ArticleViewer extends React.Component {
-  state = {
-    selectedArticle: articles[0],
-  };
+const ArticleViewer = () => {
+  const [selectedArticle, setSelectedArticle] = useState(articles[0])
 
-  setSelectedArticle = selectedArticle => {
-    this.setState({ selectedArticle });
-  };
-
-  render() {
-    return (
-      <MainDiv>
-        <ArticleDropdown
-          id="titleListDropdown"
-          articles={articles}
-          setSelectedArticle={this.setSelectedArticle}
-          selectedArticle={this.state.selectedArticle}
-          inputValue={this.state.selectedArticle.title}
-        />
-        <Article article={this.state.selectedArticle} />
-      </MainDiv>
-    );
-  }
+  return (
+    <MainDiv>
+      <ArticleDropdown
+        id="titleListDropdown"
+        articles={articles}
+        setSelectedArticle={setSelectedArticle}
+        selectedArticle={selectedArticle}
+        inputValue={selectedArticle.title}
+      />
+      <Article article={selectedArticle} />
+    </MainDiv>
+  );
 }
 
 ArticleViewer.propTypes = {};

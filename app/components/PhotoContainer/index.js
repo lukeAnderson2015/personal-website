@@ -10,13 +10,18 @@ import styled from 'styled-components';
 import ShortId from 'shortid';
 import { Photo, Img } from '..';
 
+const ScrollableWrapper = styled.div`
+  overflow-y: scroll;
+  padding: 1em;
+  margin: 6em;
+  height: 100vh;
+`;
 const StyledPhotoContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    overflow-y: scroll;
-    width: 100%;
-    height: 100vh;
+    border: solid 1px white;
+    border-radius: 10px;
 }`;
 
 function PhotoContainer({ photos }) {
@@ -31,9 +36,11 @@ function PhotoContainer({ photos }) {
   ));
 
   return (
-    <StyledPhotoContainer id="photoContainer">
-      {photoSquares}
-    </StyledPhotoContainer>
+    <ScrollableWrapper>
+      <StyledPhotoContainer id="photoContainer">
+        {photoSquares}
+      </StyledPhotoContainer>
+    </ScrollableWrapper>
   );
 }
 
