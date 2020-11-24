@@ -7,13 +7,20 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
-import reactIcon from '../../images/icons8-react-white-80.png';
+import reactIcon from '../../images/icons8-react.svg';
 
 const Wrapper = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: white solid 1px;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 
   p,
   a {

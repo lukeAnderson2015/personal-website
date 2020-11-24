@@ -16,6 +16,11 @@ const Div = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 function IntroBox(props) {

@@ -50,9 +50,7 @@ const pictures = [
   wat2,
   ecuadorShrooms,
   ecuadorianCouncil,
-  eatingCrickets,
   kauaiSunset,
-  huacachinaSkiing,
   babyElephant,
   elephantProfile,
   impala,
@@ -61,10 +59,12 @@ const pictures = [
   lionYawn,
   postOfficeBay,
   huacachinaView,
+  eatingCrickets,
   stickyWaterfall,
   divingSelfie,
   rainbowMountain,
   machuPicchu,
+  huacachinaSkiing,
   thailandMoped,
 ];
 

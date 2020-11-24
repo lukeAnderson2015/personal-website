@@ -20,7 +20,11 @@ const HeaderWrapper = styled.div`
 
   height: 6em;
   width: 100%;
-  padding: 1em 2em 1em 2em;
+  padding: 1em;
+
+  @media screen and (min-width: 768px) {
+    padding: 1em 2em 1em 2em;
+  }
 `;
 
 const NavBarItemWrapper = styled.div`
@@ -38,7 +42,11 @@ const NavBarItem = styled.a`
   align-items: center;
   justify-content: center;
 
-  margin: 0 1em 0 1em;
+  margin: 0 0.5em 0 0.5em;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 1em 0 1em;
+  }
 
   text-decoration: none;
   :hover {
@@ -68,11 +76,7 @@ function Header() {
       </NavBarItemWrapper>
       <NavBarItemWrapper>
         {buildNavItem(homeIcon, 'Home', 'home')}
-        {buildNavItem(
-          cameraIcon,
-          'Travel & Photography',
-          'travel-and-photography',
-        )}
+        {buildNavItem(cameraIcon, 'Photography', 'photography')}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
         {/* {buildNavItem(musicIcon, 'Music', 'music')} */}
       </NavBarItemWrapper>

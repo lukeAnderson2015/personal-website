@@ -12,8 +12,13 @@ import { Photo, Img } from '..';
 
 const ScrollableWrapper = styled.div`
   overflow-y: scroll;
-  padding: 1em;
-  margin: 6em;
+  padding: 0.5em;
+
+  @media screen and (min-width: 768px) {
+    padding: 1em;
+    margin: 6em;
+  }
+
   height: 100vh;
 `;
 const StyledPhotoContainer = styled.div`

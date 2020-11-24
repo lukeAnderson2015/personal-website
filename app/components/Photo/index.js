@@ -15,14 +15,17 @@ const SizedPhoto = styled.div`
   align-items: center;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    cursor: pointer;
-    border: solid 3px white;
-    z-index: 9999999;
-    transform: scale(1.5);
+  @media screen and (min-width: 768px) {
+    &:hover {
+      cursor: pointer;
+      border: solid 3px white;
+      z-index: 9999999;
+      transform: scale(1.5);
+    }
+    margin: 1em;
   }
 
-  margin: 1em;
+  margin: 0.5em;
   max-width: 20em;
   height: 15em;
 `;
@@ -35,7 +38,7 @@ const modalStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '50%',
+    width: '50%', // TODO mobile
     background: 'black',
     padding: '2em',
   },

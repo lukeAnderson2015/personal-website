@@ -18,7 +18,6 @@ import {
   pictures,
   weddingLukePortrait,
   seattleFerry,
-  phuketSnorkel,
 } from '../../images/all_images';
 
 const IntroSubHeader = styled.p`
@@ -39,10 +38,7 @@ export default function ThePage() {
         </IntroBox>
       </PanelSection>
 
-      <PanelSectionHeader
-        text="Travel & Photography"
-        id="travel-and-photography"
-      />
+      <PanelSectionHeader text="Photography" id="photography" />
       <PanelSection>
         <PhotoContainer photos={pictures} />
       </PanelSection>

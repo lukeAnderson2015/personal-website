@@ -24,16 +24,28 @@ const Text = styled.div`
   padding-right: 10px;
   overflow-y: auto;
   height: 100%;
-  text-indent: 40px;
+  text-indent: 2.5em;
 `;
 
 function Article(props) {
   const article = props.article || {};
 
   // account for \n newlines in text
-  const formattedText = article.text
-    .split('\n')
-    .map(paragraph => <p key={ShortId.generate()}>{paragraph}</p>);
+  const formattedText = article.text.split('\n').map(paragraph => {
+    const text = paragraph.trim();
+    return (
+      <p
+        style={
+          text.charAt(0) === '“' || text.charAt(0) === '"'
+            ? { paddingLeft: '1.5em', textIndent: '0' }
+            : null
+        }
+        key={ShortId.generate()}
+      >
+        {text}
+      </p>
+    );
+  });
 
   return (
     <WrapperDiv>
