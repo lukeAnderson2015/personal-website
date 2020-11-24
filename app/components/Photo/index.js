@@ -13,6 +13,7 @@ const SizedPhoto = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   transition: all 0.2s ease-in-out;
 
   @media screen and (min-width: 768px) {
@@ -22,12 +23,11 @@ const SizedPhoto = styled.div`
       z-index: 9999999;
       transform: scale(1.5);
     }
-    margin: 1em;
+    height: 15em;
+    max-width: 20em;
   }
 
-  margin: 0.5em;
-  max-width: 20em;
-  height: 15em;
+  margin: 1em;
 `;
 
 const modalStyles = {

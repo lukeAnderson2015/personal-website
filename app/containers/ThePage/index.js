@@ -13,6 +13,7 @@ import {
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
+  IntroductionContainer,
 } from 'components';
 import {
   pictures,
@@ -36,6 +37,11 @@ export default function ThePage() {
           </H2Centered>
           <IntroSubHeader>Explorer. Creator. Developer.</IntroSubHeader>
         </IntroBox>
+      </PanelSection>
+
+      <PanelSectionHeader text="Introduction" id="introduction" />
+      <PanelSection>
+        <IntroductionContainer />
       </PanelSection>
 
       <PanelSectionHeader text="Photography" id="photography" />

@@ -41,8 +41,7 @@ const NavBarItem = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin: 0 0.5em 0 0.5em;
+  margin: 0 0.35em 0 0.35em;
 
   @media screen and (min-width: 768px) {
     margin: 0 1em 0 1em;
@@ -76,6 +75,7 @@ function Header() {
       </NavBarItemWrapper>
       <NavBarItemWrapper>
         {buildNavItem(homeIcon, 'Home', 'home')}
+        {buildNavItem(bookIcon, 'Introduction', 'introduction')}
         {buildNavItem(cameraIcon, 'Photography', 'photography')}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
         {/* {buildNavItem(musicIcon, 'Music', 'music')} */}

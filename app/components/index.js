@@ -2,6 +2,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Img from './Img';
 import Photo from './Photo';
+import IntroductionContainer from './IntroductionContainer';
 import PhotoContainer from './PhotoContainer';
 import PanelSection from './PanelSection';
 import PanelSectionHeader from './PanelSectionHeader';
@@ -15,6 +16,7 @@ export {
   Footer,
   Img,
   Photo,
+  IntroductionContainer,
   PhotoContainer,
   PanelSectionHeader,
   PanelSection,

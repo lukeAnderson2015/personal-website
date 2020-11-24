@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import ShortId from 'shortid';
 
 const WrapperDiv = styled.div`
-  width: 70vw;
+  width: 80vw;
   max-height: 84vh;
   color: white;
   padding: 10px 0px 10px 15px;
@@ -18,6 +18,10 @@ const WrapperDiv = styled.div`
   border: solid 1px teal;
   background-color: rgb(220, 220, 220, 0.1);
   margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 70vw;
+  }
 `;
 
 const Text = styled.div`
@@ -25,6 +29,11 @@ const Text = styled.div`
   overflow-y: auto;
   height: 100%;
   text-indent: 2.5em;
+  font-size: larger;
+
+  @media screen and (min-width: 768px) {
+    font-size: inherit;
+  }
 `;
 
 function Article(props) {
