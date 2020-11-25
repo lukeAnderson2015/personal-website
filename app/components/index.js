@@ -1,7 +1,9 @@
 import Header from './Header';
-import Footer from './Footer/Loadable';
-import Img from './Img/Loadable';
-import Slider from './Slider/Loadable';
+import Footer from './Footer';
+import Img from './Img';
+import Photo from './Photo';
+import IntroductionContainer from './IntroductionContainer';
+import PhotoContainer from './PhotoContainer';
 import PanelSection from './PanelSection';
 import PanelSectionHeader from './PanelSectionHeader';
 import IntroBox from './IntroBox';
@@ -14,7 +16,9 @@ export {
   Header,
   Footer,
   Img,
-  Slider,
+  Photo,
+  IntroductionContainer,
+  PhotoContainer,
   PanelSectionHeader,
   PanelSection,
   IntroBox,

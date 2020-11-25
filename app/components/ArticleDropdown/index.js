@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Select from 'react-select';
@@ -29,24 +29,25 @@ const OptionLabelContainer = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
-  color: teal;
+  color: white;
 `;
 
-const selectStyles = {
+const selectStyles = (windowWidth) => ({
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isSelected
-      ? 'rgb(185, 185, 185)'
-      : 'rgb(220, 220, 220)',
+      ? 'rgb(0, 0, 0, 0.8)'
+      : 'rgb(0, 0, 0, 0.7)',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textAlign: 'center',
-    borderBottom: 'solid 1px grey',
+    borderBottom: 'solid 1px black',
     ':hover': {
       cursor: 'pointer',
-      backgroundColor: 'rgb(180, 240, 240)',
+      backgroundColor: 'rgb(0, 128, 128, 0.8)',
     },
+    color: 'black',
   }),
   valueContainer: provided => ({
     ...provided,
@@ -55,23 +56,16 @@ const selectStyles = {
     width: '300px',
     height: '50px',
   }),
-  indicatorsContainer: provided => ({
-    ...provided,
-  }),
-  dropdownIndicator: provided => ({
-    ...provided,
-    color: 'white',
-  }),
   container: provided => ({
     ...provided,
-    width: '68vw',
+    width: windowWidth >= 768 ? '70vw' : '80vw',
     height: '10vh',
   }),
   control: provided => ({
     ...provided,
-    border: '0px',
+    border: '1px solid teal',
     height: '10vh',
-    background: 'rgb(220, 220, 220, 0.4)',
+    background: 'rgb(220, 220, 220, 0.1)',
   }),
   menu: provided => ({
     ...provided,
@@ -85,9 +79,24 @@ const selectStyles = {
     ...provided,
     fontSize: '1.1em',
   }),
-};
+});
 
 function ArticleDropdown(props) {
+
+  // handle window resizing to style dropdown container
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth), [window.innerWidth];
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  });
+
   const options = props.articles.map(opt => ({
     value: opt,
     label: opt.title,
@@ -103,7 +112,7 @@ function ArticleDropdown(props) {
 
   return (
     <Select
-      styles={selectStyles}
+      styles={selectStyles(windowWidth)}
       value={options.filter(o => o.value.id === props.selectedArticle.id)}
       onChange={obj => props.setSelectedArticle(obj.value)}
       options={options}

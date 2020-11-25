@@ -28,7 +28,6 @@ function CircularImg(props) {
         width: '210px',
         height: '210px',
         marginTop,
-        zIndex: 999,
         overflow: 'hidden',
         borderRadius: '50%',
       }}

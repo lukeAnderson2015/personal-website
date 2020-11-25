@@ -21,6 +21,14 @@ const AppWrapper = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
+  font-size: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  background-color: black;
+  color: white;
 `;
 
 export default function App() {

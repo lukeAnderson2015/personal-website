@@ -6,20 +6,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
+  PhotoContainer,
   PanelSection,
   H2Centered,
   IntroBox,
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
-  // MusicPlayer,
-  Slider,
+  IntroductionContainer,
 } from 'components';
-import {
+import pictures, {
   weddingLukePortrait,
   seattleFerry,
-  // kauaiSunset,
-  phuketSnorkel,
 } from '../../images/all_images';
 
 const IntroSubHeader = styled.p`
@@ -40,16 +38,18 @@ export default function ThePage() {
         </IntroBox>
       </PanelSection>
 
-      <PanelSectionHeader
-        text="Travel & Photography"
-        id="travel-and-photography"
-      />
+      <PanelSectionHeader text="Introduction" id="introduction" />
       <PanelSection>
-        <Slider />
+        <IntroductionContainer />
+      </PanelSection>
+
+      <PanelSectionHeader text="Photography" id="photography" />
+      <PanelSection>
+        <PhotoContainer photos={pictures} />
       </PanelSection>
 
       <PanelSectionHeader text="Writing" id="writing" />
-      <PanelSection backgroundImage={phuketSnorkel}>
+      <PanelSection>
         <ArticleViewer />
       </PanelSection>
 

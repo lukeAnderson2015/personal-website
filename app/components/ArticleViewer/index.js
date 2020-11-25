@@ -16,12 +16,11 @@ const MainDiv = styled.div`
   align-items: center;
   flex-flow: column;
   align-content: space-evenly;
-  padding: 3vh 0px 0px 0px;
   height: 100vh;
   width: 100vw;
 `;
 
-function ArticleViewer() {
+const ArticleViewer = () => {
   const [selectedArticle, setSelectedArticle] = useState(articles[0]);
 
   return (
@@ -36,6 +35,6 @@ function ArticleViewer() {
       <Article article={selectedArticle} />
     </MainDiv>
   );
-}
+};
 
 export default memo(ArticleViewer);

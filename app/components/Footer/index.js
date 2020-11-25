@@ -7,18 +7,31 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
-import reactIcon from '../../images/icons8-react-native-64.png';
+import reactIcon from '../../images/icons8-react.svg';
 
 const Wrapper = styled.footer`
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 15px;
+  text-align: center;
+  flex-wrap: wrap;
+  border-top: white solid 1px;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 
   p,
   a {
     margin: 3px;
   }
+`;
+
+const IconCredits = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
 `;
 
 function Footer() {
@@ -31,9 +44,20 @@ function Footer() {
         }}
       >
         <p>This project is licensed under the MIT license.</p>
-        <a href="https://icons8.com" target="_blank">
-          Icons By Icons8
-        </a>
+        <IconCredits>
+          <p>Icons By</p>
+          <p>
+            <a href="https://icons8.com" target="_blank">
+              Icons8
+            </a>
+          </p>
+          <p>&</p>
+          <p>
+            <a href="https://freeicons.io/" target="_blank">
+              FreeIcons.io
+            </a>
+          </p>
+        </IconCredits>
       </section>
       <section>
         <span>Built with love using </span>
@@ -44,8 +68,8 @@ function Footer() {
       </section>
       <section>
         <p>
-          Site Design, Implementation, Most* Photography, Music and Writing by
-          Lukas Anderson.
+          Site Design, Implementation, Most* Photography and Writing by Lukas
+          Anderson.
         </p>
         <p>
           Credit to Max Stoiber for the{' '}

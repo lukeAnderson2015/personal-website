@@ -8,36 +8,39 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+
+const WhiteDividerLine = styled.div`
+  border-left: solid white 1px;
+  width: 1px;
+  height: 40%;
+  margin-right: 0.5em;
+
+  @media screen and (min-width: 920px) {
+    display: none;
+  }
+`;
+
 const Header = styled.h1`
   display: flex;
-  margin: 0;
-  justify-content: center;
   align-items: center;
-  font-size: 5vh;
+  padding-left: 0.75em;
+  margin: 0 0 0 2.5em;
+
+  @media screen and (min-width: 920px) {
+    justify-content: center;
+    margin: 0;
+    padding: 1em 2em 1em 2em;
+  }
+
   font-family: 'Jim Nightshade', italic;
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(160, 160, 160, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(160, 160, 160, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(160, 160, 160, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  color: rgb(115, 115, 115);
-  height: 25vh;
-  width: auto;
+  font-weight: normal;
+  height: 3em;
 `;
 
 function PanelSectionHeader(props) {
   return (
     <Header style={{ ...props.style }} id={props.id}>
+      <WhiteDividerLine />
       <span>{props.text}</span>
     </Header>
   );
