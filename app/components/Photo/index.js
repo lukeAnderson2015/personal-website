@@ -4,7 +4,7 @@
  *
  */
 
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
@@ -30,7 +30,7 @@ const SizedPhoto = styled.div`
   margin: 1em;
 `;
 
-const modalStyles = {
+const modalStyles = width => ({
   content: {
     top: '50%',
     left: '50%',
@@ -38,18 +38,32 @@ const modalStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '50%', // TODO mobile
+    width: width > 768 ? '50%' : '95%',
     background: 'black',
     padding: '2em',
   },
   overlay: {
     background: 'black',
   },
-};
+});
 
 function Photo(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const toggleModal = () => setModalIsOpen(!modalIsOpen);
+
+  // handle window resizing to style dropdown container
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth), [window.innerWidth];
+    }
+    console.log('width: ', window.innerWidth)
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  });
 
   return (
     <SizedPhoto onClick={toggleModal}>
@@ -57,7 +71,7 @@ function Photo(props) {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={toggleModal}
-        style={modalStyles}
+        style={modalStyles(windowWidth)}
       >
         {props.children}
       </Modal>

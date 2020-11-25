@@ -12,6 +12,7 @@ import linkedInIcon from '../../images/linkedInIcon.svg';
 import cameraIcon from '../../images/cameraIcon.svg';
 import homeIcon from '../../images/homeIcon.svg';
 import bookIcon from '../../images/bookIcon.svg';
+import profileIcon from '../../images/profileIcon.svg';
 
 const HeaderWrapper = styled.div`
   position: fixed;
@@ -75,7 +76,7 @@ function Header() {
       </NavBarItemWrapper>
       <NavBarItemWrapper>
         {buildNavItem(homeIcon, 'Home', 'home')}
-        {buildNavItem(bookIcon, 'Introduction', 'introduction')}
+        {buildNavItem(profileIcon, 'Introduction', 'introduction')}
         {buildNavItem(cameraIcon, 'Photography', 'photography')}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
         {/* {buildNavItem(musicIcon, 'Music', 'music')} */}

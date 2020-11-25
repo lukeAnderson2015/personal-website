@@ -28,6 +28,12 @@ const Wrapper = styled.footer`
   }
 `;
 
+const IconCredits = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+`;
+
 function Footer() {
   return (
     <Wrapper>
@@ -38,9 +44,20 @@ function Footer() {
         }}
       >
         <p>This project is licensed under the MIT license.</p>
-        <a href="https://icons8.com" target="_blank">
-          Icons By Icons8
-        </a>
+        <IconCredits>
+          <p>Icons By</p>
+          <p>
+            <a href="https://icons8.com" target="_blank">
+              Icons8
+            </a>
+          </p>
+          <p>&</p>
+          <p>
+            <a href="https://freeicons.io/" target="_blank">
+              FreeIcons.io
+            </a>
+          </p>
+        </IconCredits>
       </section>
       <section>
         <span>Built with love using </span>

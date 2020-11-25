@@ -28,6 +28,7 @@ const Header = styled.h1`
 
   @media screen and (min-width: 920px) {
     justify-content: center;
+    margin: 0;
     padding: 1em 2em 1em 2em;
   }
 

@@ -84,7 +84,7 @@ const selectStyles = (windowWidth) => ({
 function ArticleDropdown(props) {
 
   // handle window resizing to style dropdown container
-  const [windowWidth, setWindowWidth] = useState(undefined);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
       setWindowWidth(window.innerWidth), [window.innerWidth];

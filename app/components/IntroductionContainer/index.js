@@ -7,63 +7,55 @@
 import React, { memo } from 'react';
 import styled, { css } from 'styled-components';
 
-const marginTop = css`
-  margin-top: 10vh;
-`;
-
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   font-size: 10px;
+  height: 95vh;
+  width: 100vw;
 
   @media screen and (min-width: 768px) {
     padding: 1em 2em 1em 2em;
     font-size: inherit;
+    height: 85vh;
   }
 `;
 
 const RightPane = styled.div`
-  align-items: center;
-  width: 55%;
-
-  ${marginTop}
+  padding-left: 3em;
+  width: 65%;
 `;
 
 const LeftPane = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  width: 30%;
-
-  ${marginTop}
+  width: 20%;
+  text-align: right;
+  padding-right: 3em;
 `;
 
 const CenterLine = styled.div`
-  height: 65vh;
+  height: 50vh;
   border-right: solid white 1px;
   border-radius: 5px;
-
-  ${marginTop}
-`;
-
-const Div = styled.div`
-  width: 100%;
 `;
 
 const IntroductionContainer = () => {
   return (
     <Container>
       <LeftPane>
-        <Div><h3> Lukas Axel Anderson </h3></Div>
-        <Div><p>2/3/1994</p></Div>
+        <p>Explorer</p>
+        <br />
+        <p>Developer</p>
+        <br />
+        <p>Creator</p>
       </LeftPane>
       <CenterLine />
       <RightPane>
-        <Div><p>I was born and raised on an island near Seattle, Washington.</p></Div>
-        <Div><p>In a totally unbiased manner, Washington is without question the best place on Earth.</p></Div>
-
+        <p>In a totally unbiased manner, Washington is without question the best place on Earth (even with the rain).</p>
+        <br />
+        <p>I code for a living, but I'd prefer to be outside frolicking.</p>
+        <br />
+        <p>A dabble here. A paragraph there. I'll take photos anywhere.</p>
       </RightPane>
     </Container>
   );
