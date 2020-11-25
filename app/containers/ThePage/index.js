@@ -15,7 +15,7 @@ import {
   ArticleViewer,
   IntroductionContainer,
 } from 'components';
-import {
+import pictures, {
   weddingLukePortrait,
   seattleFerry,
 } from '../../images/all_images';
