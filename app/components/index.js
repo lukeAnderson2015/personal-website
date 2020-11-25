@@ -9,7 +9,8 @@ import PanelSectionHeader from './PanelSectionHeader';
 import IntroBox from './IntroBox';
 import CircularImg from './CircularImg';
 import H2Centered from './H2Centered';
-import ArticleViewer from './ArticleViewer';
+import ArticleViewer from './ArticleViewer/Loadable';
+import MusicPlayer from './MusicPlayer/Loadable';
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   CircularImg,
   H2Centered,
   ArticleViewer,
+  MusicPlayer,
 };

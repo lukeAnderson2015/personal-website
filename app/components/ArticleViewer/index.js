@@ -9,7 +9,6 @@ import styled from 'styled-components';
 
 import Article from 'components/Article';
 import ArticleDropdown from 'components/ArticleDropdown';
-
 import articles from './articles';
 
 const MainDiv = styled.div`
@@ -37,7 +36,5 @@ const ArticleViewer = () => {
     </MainDiv>
   );
 };
-
-ArticleViewer.propTypes = {};
 
 export default memo(ArticleViewer);

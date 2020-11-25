@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   #app {
-    background-color: #efefef;
+    background-color: white;
     min-height: 100vh;
     min-width: 100%;
   }

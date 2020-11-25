@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // images for travel and photography slider
 import spiralPlant from './spiral_plant.jpg';
 import stickyWaterfall from './sticky_waterfall.jpg';
@@ -68,4 +69,6 @@ const pictures = [
   thailandMoped,
 ];
 
-export { pictures, seattleFerry, weddingLukePortrait, phuketSnorkel };
+export { seattleFerry, weddingLukePortrait, phuketSnorkel, kauaiSunset };
+
+export default pictures;

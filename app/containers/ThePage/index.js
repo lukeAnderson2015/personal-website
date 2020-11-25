@@ -16,7 +16,6 @@ import {
   IntroductionContainer,
 } from 'components';
 import {
-  pictures,
   weddingLukePortrait,
   seattleFerry,
 } from '../../images/all_images';
@@ -55,7 +54,9 @@ export default function ThePage() {
       </PanelSection>
 
       {/* <PanelSectionHeader text="Music" id="music" />
-      <PanelSection backgroundImage={kauaiSunset} /> */}
+      <PanelSection backgroundImage={kauaiSunset}>
+        <MusicPlayer />
+      </PanelSection> */}
     </div>
   );
 }
