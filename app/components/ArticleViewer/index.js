@@ -20,7 +20,7 @@ const MainDiv = styled.div`
   width: 100vw;
 `;
 
-const ArticleViewer = () => {
+const ArticleViewer = ({ windowWidth }) => {
   const [selectedArticle, setSelectedArticle] = useState(articles[0]);
 
   return (
@@ -31,6 +31,7 @@ const ArticleViewer = () => {
         setSelectedArticle={setSelectedArticle}
         selectedArticle={selectedArticle}
         inputValue={selectedArticle.title}
+        windowWidth={windowWidth}
       />
       <Article article={selectedArticle} />
     </MainDiv>

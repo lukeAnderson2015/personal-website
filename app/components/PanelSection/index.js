@@ -7,6 +7,7 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const Section = styled.section`
   display: flex;
@@ -17,21 +18,21 @@ const Section = styled.section`
   max-width: 100%;
   max-height: 100vh;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     background-position: 0% 0%;
   }
 `;
 
-function PanelSection(props) {
+function PanelSection({ style, backgroundImage, id, children }) {
   return (
     <Section
       style={{
-        ...props.style,
-        backgroundImage: `url(${props.backgroundImage})`,
+        ...style,
+        backgroundImage: `url(${backgroundImage})`,
       }}
-      id={props.id}
+      id={id}
     >
-      {props.children}
+      {children}
     </Section>
   );
 }

@@ -8,6 +8,7 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import Img from 'components/Img';
 import reactIcon from '../../images/icons8-react.svg';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -18,7 +19,7 @@ const Wrapper = styled.footer`
   flex-wrap: wrap;
   border-top: white solid 1px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     flex-wrap: nowrap;
   }
 

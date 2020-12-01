@@ -15,8 +15,8 @@ const Div = styled.div`
   background-color: rgb(75, 80, 150);
 `;
 
-function Song(props) {
-  return <Div>{props.song.title}</Div>;
+function Song({ song }) {
+  return <Div>{song.title}</Div>;
 }
 
 Song.propTypes = {

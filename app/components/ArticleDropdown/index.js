@@ -4,10 +4,11 @@
  *
  */
 
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Select from 'react-select';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const Title = styled.h4`
   width: 100%;
@@ -58,7 +59,7 @@ const selectStyles = (windowWidth) => ({
   }),
   container: provided => ({
     ...provided,
-    width: windowWidth >= 768 ? '70vw' : '80vw',
+    width: windowWidth >= windowWidthThreshhold ? '70vw' : '80vw',
     height: '10vh',
   }),
   control: provided => ({
@@ -81,23 +82,8 @@ const selectStyles = (windowWidth) => ({
   }),
 });
 
-function ArticleDropdown(props) {
-
-  // handle window resizing to style dropdown container
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth), [window.innerWidth];
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  });
-
-  const options = props.articles.map(opt => ({
+function ArticleDropdown({ articles, windowWidth, selectedArticle, setSelectedArticle }) {
+  const options = articles.map(opt => ({
     value: opt,
     label: opt.title,
   }));
@@ -113,8 +99,8 @@ function ArticleDropdown(props) {
   return (
     <Select
       styles={selectStyles(windowWidth)}
-      value={options.filter(o => o.value.id === props.selectedArticle.id)}
-      onChange={obj => props.setSelectedArticle(obj.value)}
+      value={options.filter(o => o.value.id === selectedArticle.id)}
+      onChange={obj => setSelectedArticle(obj.value)}
       options={options}
       formatOptionLabel={formatOptionLabel}
       noOptionsMessage={() => "Doesn't look like anything at all."}

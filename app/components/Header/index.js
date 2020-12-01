@@ -13,6 +13,8 @@ import cameraIcon from '../../images/cameraIcon.svg';
 import homeIcon from '../../images/homeIcon.svg';
 import bookIcon from '../../images/bookIcon.svg';
 import profileIcon from '../../images/profileIcon.svg';
+import worldIcon from '../../images/worldIcon.svg';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const HeaderWrapper = styled.div`
   position: fixed;
@@ -23,7 +25,7 @@ const HeaderWrapper = styled.div`
   width: 100%;
   padding: 1em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     padding: 1em 2em 1em 2em;
   }
 `;
@@ -44,7 +46,7 @@ const NavBarItem = styled.a`
   justify-content: center;
   margin: 0 0.35em 0 0.35em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     margin: 0 1em 0 1em;
   }
 
@@ -62,7 +64,7 @@ function buildNavItem(icon, title, id) {
   );
 }
 
-function Header() {
+function Header({ windowWidth }) {
   return (
     <HeaderWrapper>
       <NavBarItemWrapper>
@@ -79,6 +81,7 @@ function Header() {
         {buildNavItem(profileIcon, 'Introduction', 'introduction')}
         {buildNavItem(cameraIcon, 'Photography', 'photography')}
         {buildNavItem(bookIcon, 'Writing', 'writing')}
+        {windowWidth > windowWidthThreshhold ? buildNavItem(worldIcon, 'Travel', 'travel') : null}
         {/* {buildNavItem(musicIcon, 'Music', 'music')} */}
       </NavBarItemWrapper>
     </HeaderWrapper>

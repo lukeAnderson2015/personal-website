@@ -11,6 +11,7 @@ import CircularImg from './CircularImg';
 import H2Centered from './H2Centered';
 import ArticleViewer from './ArticleViewer/Loadable';
 import MusicPlayer from './MusicPlayer/Loadable';
+import TravelContainer from './TravelContainer';
 
 export {
   Header,
@@ -26,4 +27,5 @@ export {
   H2Centered,
   ArticleViewer,
   MusicPlayer,
+  TravelContainer,
 };

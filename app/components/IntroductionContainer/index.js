@@ -5,7 +5,8 @@
  */
 
 import React, { memo } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Container = styled.div`
   height: 95vh;
   width: 100vw;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     padding: 1em 2em 1em 2em;
     font-size: inherit;
     height: 85vh;
@@ -43,19 +44,19 @@ const IntroductionContainer = () => {
   return (
     <Container>
       <LeftPane>
+        <p>Creator</p>
+        <br />
         <p>Explorer</p>
         <br />
         <p>Developer</p>
-        <br />
-        <p>Creator</p>
       </LeftPane>
       <CenterLine />
       <RightPane>
+        <p>A dabble here. A paragraph there. I'll take photos anywhere.</p>
+        <br />
         <p>In a totally unbiased manner, Washington is without question the best place on Earth (even with the rain).</p>
         <br />
         <p>I code for a living, but I'd prefer to be outside frolicking.</p>
-        <br />
-        <p>A dabble here. A paragraph there. I'll take photos anywhere.</p>
       </RightPane>
     </Container>
   );

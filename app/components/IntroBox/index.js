@@ -7,6 +7,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const Div = styled.div`
   display: flex;
@@ -18,13 +19,13 @@ const Div = styled.div`
   justify-content: center;
   font-size: 14px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     font-size: 16px;
   }
 `;
 
-function IntroBox(props) {
-  return <Div>{props.children}</Div>;
+function IntroBox({ children }) {
+  return <Div>{children}</Div>;
 }
 
 IntroBox.propTypes = {

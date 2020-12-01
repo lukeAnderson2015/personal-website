@@ -37,11 +37,11 @@ const Header = styled.h1`
   height: 3em;
 `;
 
-function PanelSectionHeader(props) {
+function PanelSectionHeader({ style, id, text }) {
   return (
-    <Header style={{ ...props.style }} id={props.id}>
+    <Header style={{ ...style }} id={id}>
       <WhiteDividerLine />
-      <span>{props.text}</span>
+      <span>{text}</span>
     </Header>
   );
 }

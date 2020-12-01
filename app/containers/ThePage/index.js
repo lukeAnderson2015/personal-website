@@ -3,7 +3,7 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import {
   PhotoContainer,
@@ -14,6 +14,7 @@ import {
   PanelSectionHeader,
   ArticleViewer,
   IntroductionContainer,
+  TravelContainer,
 } from 'components';
 import pictures, {
   weddingLukePortrait,
@@ -25,7 +26,7 @@ const IntroSubHeader = styled.p`
   margin: 0;
 `;
 
-export default function ThePage() {
+export default function ThePage({ windowWidth }) {
   return (
     <div>
       <PanelSection id="home" backgroundImage={seattleFerry}>
@@ -45,13 +46,23 @@ export default function ThePage() {
 
       <PanelSectionHeader text="Photography" id="photography" />
       <PanelSection>
-        <PhotoContainer photos={pictures} />
+        <PhotoContainer photos={pictures} windowWidth={windowWidth} />
       </PanelSection>
 
       <PanelSectionHeader text="Writing" id="writing" />
       <PanelSection>
-        <ArticleViewer />
+        <ArticleViewer windowWidth={windowWidth} />
       </PanelSection>
+
+      {windowWidth > 768 ?
+        <Fragment>
+          <PanelSectionHeader text="Travel" id="travel" />
+          <PanelSection>
+            <TravelContainer />
+          </PanelSection>
+        </Fragment>
+        : null
+      }
 
       {/* <PanelSectionHeader text="Music" id="music" />
       <PanelSection backgroundImage={kauaiSunset}>

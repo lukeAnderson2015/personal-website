@@ -9,13 +9,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ShortId from 'shortid';
 import { Photo, Img } from '../';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const ScrollableWrapper = styled.div`
   overflow-y: scroll;
   padding: 0.25em;
   margin: 3.5em 1.75em 3.5em 3.5em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     padding: 1em;
     margin: 6em 4.5em 6em 6em;
   }
@@ -30,9 +31,9 @@ const StyledPhotoContainer = styled.div`
     border-radius: 10px;
 }`;
 
-function PhotoContainer({ photos }) {
+function PhotoContainer({ photos, windowWidth }) {
   const photoSquares = photos.map(p => (
-    <Photo key={ShortId.generate()}>
+    <Photo windowWidth={windowWidth} key={ShortId.generate()}>
       <Img
         src={p}
         alt="image-unavailable"
