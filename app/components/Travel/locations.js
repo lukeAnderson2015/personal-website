@@ -4,6 +4,7 @@ const locations = [
     { coords: [-149, 61] }, // AK
     { coords: [-82, 28] }, // FL
     { coords: [-79.5, -2.5] }, // Ecuador
+    { coords: [-67.5, -2.5] }, // Amazon
     { coords: [35, -3] }, // Tanzania
     { coords: [15, 60] }, // Sweden
     { coords: [14, 42] }, // Italy
