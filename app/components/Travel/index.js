@@ -1,6 +1,6 @@
 /**
  *
- * TravelContainer
+ * Travel
  *
  */
 
@@ -13,8 +13,9 @@ import {
   Marker
 } from "react-simple-maps";
 import { windowWidthThreshhold } from '../../utils/constants';
+import locations from './locations';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   svg {
     display: inline-block;
     vertical-align: middle;
@@ -31,10 +32,10 @@ const Container = styled.div`
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-function TravelContainer() {
+function Travel() {
   return (
-    <Container>
-      <ComposableMap width={950} height={600}>
+    <Wrapper>
+      <ComposableMap width={950} height={575}>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map(geo => (
@@ -47,12 +48,14 @@ function TravelContainer() {
             ))
           }
         </Geographies>
-        <Marker coordinates={[-74.006, 40.7128]}>
-          <circle r={6} fill="#00f2ba" />
-        </Marker>
+        {locations.map(m =>
+          <Marker coordinates={m.coords}>
+            <circle r={5} fill="#00f2ba" />
+          </Marker>
+        )}
       </ComposableMap>
-    </Container>
+    </Wrapper>
   );
 }
 
-export default memo(TravelContainer);
+export default memo(Travel);

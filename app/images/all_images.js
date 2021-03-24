@@ -22,7 +22,6 @@ import postOfficeBay from './post_office_bay.jpg';
 import rainbowMountain from './rainbow_mountain.jpg';
 import singaporeDragonfly from './singapore_dragonfly.jpg';
 import thailandMoped from './thailand_moped.jpg';
-import wat2 from './wat_phrathat_doi_suthep.jpg';
 import babyElephant from './baby_elephant.jpg';
 import elephantProfile from './elephant_profile.jpg';
 import impala from './impala.jpg';
@@ -34,7 +33,7 @@ import lionYawn from './lion_yawn.jpg';
 import phuketSnorkel from './phuket_snorkel.jpg';
 import seattleFerry from './seattle_ferry.jpg';
 import kauaiSunset from './kauai_sunset.jpg';
-import weddingLukePortrait from './wedding_luke.jpg';
+import weddingLukePortrait from './mugshot.jpg';
 
 const pictures = [
   quilotoaFlower,
@@ -48,7 +47,6 @@ const pictures = [
   galapagosCrab,
   amazonPirhana,
   singaporeDragonfly,
-  wat2,
   ecuadorShrooms,
   ecuadorianCouncil,
   kauaiSunset,

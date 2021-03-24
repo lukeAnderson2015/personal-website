@@ -1,6 +1,6 @@
 /**
  *
- * PhotoContainer
+ * Photo
  *
  */
 
@@ -8,7 +8,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ShortId from 'shortid';
-import { Photo, Img } from '../';
+import { Photo, Img } from '..';
 import { windowWidthThreshhold } from '../../utils/constants';
 
 const ScrollableWrapper = styled.div`
@@ -23,7 +23,7 @@ const ScrollableWrapper = styled.div`
 
   height: 100vh;
 `;
-const StyledPhotoContainer = styled.div`
+const StyledPhotosWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,7 +31,7 @@ const StyledPhotoContainer = styled.div`
     border-radius: 10px;
 }`;
 
-function PhotoContainer({ photos, windowWidth }) {
+function Photos({ photos, windowWidth }) {
   const photoSquares = photos.map(p => (
     <Photo windowWidth={windowWidth} key={ShortId.generate()}>
       <Img
@@ -44,16 +44,16 @@ function PhotoContainer({ photos, windowWidth }) {
 
   return (
     <ScrollableWrapper>
-      <StyledPhotoContainer id="photoContainer">
+      <StyledPhotosWrapper>
         {photoSquares}
-      </StyledPhotoContainer>
+      </StyledPhotosWrapper>
     </ScrollableWrapper>
   );
 }
 
-PhotoContainer.propTypes = {
+Photos.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.any),
   children: PropTypes.arrayOf(PropTypes.element),
 };
 
-export default memo(PhotoContainer);
+export default memo(Photos);

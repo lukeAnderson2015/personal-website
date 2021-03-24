@@ -1,6 +1,6 @@
 /**
  *
- * IntroductionContainer
+ * Introduction
  *
  */
 
@@ -8,11 +8,11 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import { windowWidthThreshhold } from '../../utils/constants';
 
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10px;
+  font-size: 18px;
   height: 95vh;
   width: 100vw;
 
@@ -29,9 +29,19 @@ const RightPane = styled.div`
 `;
 
 const LeftPane = styled.div`
-  width: 20%;
   text-align: right;
-  padding-right: 3em;
+  padding-right: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 55vh;
+
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
+    display: block;
+    padding-right: 3em;
+    height: auto;
+    width: 20%;
+  }
 `;
 
 const CenterLine = styled.div`
@@ -40,9 +50,9 @@ const CenterLine = styled.div`
   border-radius: 5px;
 `;
 
-const IntroductionContainer = () => {
+const Introduction = () => {
   return (
-    <Container>
+    <Wrapper>
       <LeftPane>
         <p>Creator</p>
         <br />
@@ -52,14 +62,14 @@ const IntroductionContainer = () => {
       </LeftPane>
       <CenterLine />
       <RightPane>
-        <p>A dabble here. A paragraph there. I'll take photos anywhere.</p>
+        <p className="smallMargin">A new sound here. A paragraph there. I'll take photos anywhere.</p>
         <br />
-        <p>In a totally unbiased manner, Washington is without question the best place on Earth (even with the rain).</p>
+        <p className="smallMargin">In a totally unbiased manner, Washington is without question the best place on Earth (even with the rain).</p>
         <br />
-        <p>I code for a living, but I'd prefer to be outside frolicking.</p>
+        <p className="smallMargin">I code for a living, but I'd prefer to be outside frolicking.</p>
       </RightPane>
-    </Container>
+    </Wrapper>
   );
 }
 
-export default memo(IntroductionContainer);
+export default memo(Introduction);

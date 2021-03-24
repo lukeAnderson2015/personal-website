@@ -6,15 +6,15 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import {
-  PhotoContainer,
+  Photos,
   PanelSection,
   H2Centered,
   IntroBox,
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
-  IntroductionContainer,
-  TravelContainer,
+  Introduction,
+  Travel,
 } from 'components';
 import pictures, {
   weddingLukePortrait,
@@ -25,6 +25,11 @@ const IntroSubHeader = styled.p`
   font-style: italic;
   margin: 0;
 `;
+
+const INTRODUCTION = "Introduction";
+const PHOTOGRAPHY = "Photography";
+const WRITING = "Writing";
+const TRAVEL = "Travel";
 
 export default function ThePage({ windowWidth }) {
   return (
@@ -39,26 +44,26 @@ export default function ThePage({ windowWidth }) {
         </IntroBox>
       </PanelSection>
 
-      <PanelSectionHeader text="Introduction" id="introduction" />
+      <PanelSectionHeader text={INTRODUCTION} id={INTRODUCTION.toLowerCase()} />
       <PanelSection>
-        <IntroductionContainer />
+        <Introduction />
       </PanelSection>
 
-      <PanelSectionHeader text="Photography" id="photography" />
+      <PanelSectionHeader text={PHOTOGRAPHY} id={PHOTOGRAPHY.toLowerCase()} />
       <PanelSection>
-        <PhotoContainer photos={pictures} windowWidth={windowWidth} />
+        <Photos photos={pictures} windowWidth={windowWidth} />
       </PanelSection>
 
-      <PanelSectionHeader text="Writing" id="writing" />
+      <PanelSectionHeader text={WRITING} id={WRITING.toLowerCase()} />
       <PanelSection>
         <ArticleViewer windowWidth={windowWidth} />
       </PanelSection>
 
       {windowWidth > 768 ?
         <Fragment>
-          <PanelSectionHeader text="Travel" id="travel" />
+          <PanelSectionHeader text={TRAVEL} id={TRAVEL.toLowerCase()} />
           <PanelSection>
-            <TravelContainer />
+            <Travel />
           </PanelSection>
         </Fragment>
         : null

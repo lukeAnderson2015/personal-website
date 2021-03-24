@@ -26,7 +26,7 @@ const SubTitle = styled.p`
   font-style: italic;
 `;
 
-const OptionLabelContainer = styled.div`
+const OptionLabelWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -90,10 +90,10 @@ function ArticleDropdown({ articles, windowWidth, selectedArticle, setSelectedAr
 
   // eslint-disable-next-line react/prop-types
   const formatOptionLabel = ({ value, label }) => (
-    <OptionLabelContainer>
+    <OptionLabelWrapper>
       <Title> {label} </Title>
       <SubTitle>{value ? `${value.date} ~ ${value.genre}` : ''}</SubTitle>
-    </OptionLabelContainer>
+    </OptionLabelWrapper>
   );
 
   return (

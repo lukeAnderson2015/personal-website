@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for Photos
+ * Asynchronously loads the component for Travel
  *
  */
 import React from 'react';

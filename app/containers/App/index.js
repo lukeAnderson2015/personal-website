@@ -33,7 +33,7 @@ const AppWrapper = styled.div`
 `;
 
 export default function App() {
-  // handle window resizing to style dropdown container
+  // handle window resizing to style dropdown wrapper
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
