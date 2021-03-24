@@ -7,13 +7,13 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-function Img(props) {
+function Img({ className, style, src, alt }) {
   return (
     <img
-      className={props.className}
-      style={props.style}
-      src={props.src}
-      alt={props.alt}
+      className={className}
+      style={style}
+      src={src}
+      alt={alt}
     />
   );
 }

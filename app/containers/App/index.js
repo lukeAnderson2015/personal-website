@@ -7,7 +7,7 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -15,6 +15,7 @@ import ThePage from 'containers/ThePage/Loadable';
 import { Header, Footer } from 'components';
 import { Helmet } from 'react-helmet';
 import GlobalStyle from '../../global-styles';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const AppWrapper = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
   font-size: 10px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     font-size: 18px;
   }
 
@@ -32,15 +33,28 @@ const AppWrapper = styled.div`
 `;
 
 export default function App() {
+  // handle window resizing to style dropdown wrapper
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth), [window.innerWidth];
+    }
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  });
+
   return (
     <AppWrapper>
       <Helmet>
         <title>Lukas Anderson</title>
         <meta name="description" content="Lukas Anderson" />
       </Helmet>
-      <Header />
+      <Header windowWidth={windowWidth} />
       <Switch>
-        <Route exact path="/" component={ThePage} />
+        <Route exact path="/" component={() => <ThePage windowWidth={windowWidth} />} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer />

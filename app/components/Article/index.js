@@ -8,6 +8,7 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ShortId from 'shortid';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const WrapperDiv = styled.div`
   width: 80vw;
@@ -19,7 +20,7 @@ const WrapperDiv = styled.div`
   background-color: rgb(220, 220, 220, 0.1);
   margin-top: 10px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     width: 70vw;
   }
 `;
@@ -31,13 +32,12 @@ const Text = styled.div`
   text-indent: 2.5em;
   font-size: larger;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     font-size: inherit;
   }
 `;
 
-function Article(props) {
-  const article = props.article || {};
+function Article({ article }) {
 
   // account for \n newlines in text
   const formattedText = article.text.split('\n').map(paragraph => {

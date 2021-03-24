@@ -1,6 +1,6 @@
 /**
  *
- * PhotoContainer
+ * Photo
  *
  */
 
@@ -8,21 +8,22 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ShortId from 'shortid';
-import { Photo, Img } from '../';
+import { Photo, Img } from '..';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const ScrollableWrapper = styled.div`
   overflow-y: scroll;
   padding: 0.25em;
   margin: 3.5em 1.75em 3.5em 3.5em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     padding: 1em;
     margin: 6em 4.5em 6em 6em;
   }
 
   height: 100vh;
 `;
-const StyledPhotoContainer = styled.div`
+const StyledPhotosWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -30,9 +31,9 @@ const StyledPhotoContainer = styled.div`
     border-radius: 10px;
 }`;
 
-function PhotoContainer({ photos }) {
+function Photos({ photos, windowWidth }) {
   const photoSquares = photos.map(p => (
-    <Photo key={ShortId.generate()}>
+    <Photo windowWidth={windowWidth} key={ShortId.generate()}>
       <Img
         src={p}
         alt="image-unavailable"
@@ -43,16 +44,16 @@ function PhotoContainer({ photos }) {
 
   return (
     <ScrollableWrapper>
-      <StyledPhotoContainer id="photoContainer">
+      <StyledPhotosWrapper>
         {photoSquares}
-      </StyledPhotoContainer>
+      </StyledPhotosWrapper>
     </ScrollableWrapper>
   );
 }
 
-PhotoContainer.propTypes = {
+Photos.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.any),
   children: PropTypes.arrayOf(PropTypes.element),
 };
 
-export default memo(PhotoContainer);
+export default memo(Photos);

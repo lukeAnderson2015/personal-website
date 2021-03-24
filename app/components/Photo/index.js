@@ -4,10 +4,11 @@
  *
  */
 
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import { windowWidthThreshhold } from '../../utils/constants';
 
 const SizedPhoto = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const SizedPhoto = styled.div`
 
   transition: all 0.2s ease-in-out;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${windowWidthThreshhold}px) {
     &:hover {
       cursor: pointer;
       border: solid 3px white;
@@ -38,7 +39,7 @@ const modalStyles = width => ({
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: width > 768 ? '50%' : '95%',
+    width: width > windowWidthThreshhold ? '50%' : '95%',
     background: 'black',
     padding: '2em',
   },
@@ -47,33 +48,19 @@ const modalStyles = width => ({
   },
 });
 
-function Photo(props) {
+function Photo({ children, windowWidth }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const toggleModal = () => setModalIsOpen(!modalIsOpen);
 
-  // handle window resizing to style dropdown container
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth), [window.innerWidth];
-    }
-    console.log('width: ', window.innerWidth)
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  });
-
   return (
     <SizedPhoto onClick={toggleModal}>
-      {props.children}
+      {children}
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={toggleModal}
         style={modalStyles(windowWidth)}
       >
-        {props.children}
+        {children}
       </Modal>
     </SizedPhoto>
   );

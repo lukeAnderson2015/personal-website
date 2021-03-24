@@ -3,17 +3,18 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import {
-  PhotoContainer,
+  Photos,
   PanelSection,
   H2Centered,
   IntroBox,
   CircularImg,
   PanelSectionHeader,
   ArticleViewer,
-  IntroductionContainer,
+  Introduction,
+  Travel,
 } from 'components';
 import pictures, {
   weddingLukePortrait,
@@ -25,7 +26,12 @@ const IntroSubHeader = styled.p`
   margin: 0;
 `;
 
-export default function ThePage() {
+const INTRODUCTION = "Introduction";
+const PHOTOGRAPHY = "Photography";
+const WRITING = "Writing";
+const TRAVEL = "Travel";
+
+export default function ThePage({ windowWidth }) {
   return (
     <div>
       <PanelSection id="home" backgroundImage={seattleFerry}>
@@ -38,20 +44,30 @@ export default function ThePage() {
         </IntroBox>
       </PanelSection>
 
-      <PanelSectionHeader text="Introduction" id="introduction" />
+      <PanelSectionHeader text={INTRODUCTION} id={INTRODUCTION.toLowerCase()} />
       <PanelSection>
-        <IntroductionContainer />
+        <Introduction />
       </PanelSection>
 
-      <PanelSectionHeader text="Photography" id="photography" />
+      <PanelSectionHeader text={PHOTOGRAPHY} id={PHOTOGRAPHY.toLowerCase()} />
       <PanelSection>
-        <PhotoContainer photos={pictures} />
+        <Photos photos={pictures} windowWidth={windowWidth} />
       </PanelSection>
 
-      <PanelSectionHeader text="Writing" id="writing" />
+      <PanelSectionHeader text={WRITING} id={WRITING.toLowerCase()} />
       <PanelSection>
-        <ArticleViewer />
+        <ArticleViewer windowWidth={windowWidth} />
       </PanelSection>
+
+      {windowWidth > 768 ?
+        <Fragment>
+          <PanelSectionHeader text={TRAVEL} id={TRAVEL.toLowerCase()} />
+          <PanelSection>
+            <Travel />
+          </PanelSection>
+        </Fragment>
+        : null
+      }
 
       {/* <PanelSectionHeader text="Music" id="music" />
       <PanelSection backgroundImage={kauaiSunset}>
